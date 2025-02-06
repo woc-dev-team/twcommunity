@@ -4,9 +4,11 @@
 # Skills
 * ReactJS
 * typescript
+* tailwindcss
 * Jotai
 * ESLint
 
 # Plugin
-[깃모지 꾸미기](https://inpa.tistory.com/entry/GIT-%E2%9A%A1%EF%B8%8F-Gitmoji-%EC%82%AC%EC%9A%A9%EB%B2%95-Gitmoji-cli)
-gitmoji -help
+GitMoji : [깃모지 꾸미기](https://inpa.tistory.com/entry/GIT-%E2%9A%A1%EF%B8%8F-Gitmoji-%EC%82%AC%EC%9A%A9%EB%B2%95-Gitmoji-cli)
+
+PostCSS - autoprefixer
