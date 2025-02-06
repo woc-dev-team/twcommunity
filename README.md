@@ -2,9 +2,8 @@
 더워드 교회 사이트를 운영합니다
 
 # Skills
-* ReactJS
+* ReactJS + Vite + Tailwindcss
 * typescript
-* tailwindcss
 * Jotai
 * ESLint
 
