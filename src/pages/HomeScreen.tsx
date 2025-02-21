@@ -1,9 +1,11 @@
 import AboutChurch from "./AboutChurch";
 import AboutPaster from "./AboutPaster";
+import Sidebar from "../features/Navbar/Sidebar";
 
 const HomeScreen = () => {
   return (
-    <div className="">
+    <div>
+      <Sidebar />
       <AboutChurch />
       <AboutPaster />
     </div>

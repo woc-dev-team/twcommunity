@@ -2,11 +2,8 @@ import LanguagePack from "../LanguagePack";
 import NavList from "./NavList";
 import { navListData } from "../../entities/datas";
 import navLogo from "../../assets/nav_logo.svg";
-import useMenus from "./useMenus";
 
 const Navbar = () => {
-    const {isMenuOn, setIsMenuOn} = useMenus();
-
     return (
         <nav className="bg-white dark:bg-black transition-all duration-500 ease-in-out justify-between">
             <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -28,6 +25,8 @@ const Navbar = () => {
                 <LanguagePack />
             </div>
         </nav>
+
+        
     )
 }
 
