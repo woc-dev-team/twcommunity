@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hover_effect a {
+    transition: 0.35s;
+}
+  
+.hover_effect a:hover {
+    text-shadow: 0 0 20px #000000;
+    -moz-transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    transform: scale(1.02);
+}
+
+@media (prefers-color-scheme: dark) {
+    .hover_effect a:hover {
+        text-shadow: 0 0 15px #FFFFFF;
+        -moz-transform: scale(1.02);
+        -webkit-transform: scale(1.02);
+        -o-transform: scale(1.02);
+        transform: scale(1.02);
+    }
+}
