@@ -1,5 +1,5 @@
 import GlobeAltIcon from "@heroicons/react/24/solid/GlobeAsiaAustraliaIcon";
-import KoreaIcon from "../assets/south-korea.png";
+import KoreaIcon from "../assets/images/south-korea.png";
 import useMenus from "./Navbar/useMenus";
 
 const LanguagePack = () => {
@@ -26,7 +26,7 @@ const LanguagePack = () => {
                     <li>
                         <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
                         <div className="inline-flex items-center">
-                            <img src="https://www.countryflags.io/us/flat/32.png" alt="United States" className="h-3.5 w-3.5 rounded-full me-2" />                            
+                            <img src="https://www.countryflags.io/us/flat/32.png" alt="United States" className="h-3.5 w-3.5 rounded-full me-2" />                          
                             English (US)
                         </div>
                         </a>

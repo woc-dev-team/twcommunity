@@ -1,14 +1,14 @@
-import AboutChurch from "./AboutChurch";
-import AboutPaster from "./AboutPaster";
-import Sidebar from "../features/Navbar/Sidebar";
+import MainElements from "./HomeChildren/MainElements";
+import AboutPaster from "./HomeChildren/AboutPaster";
+import AboutChurch from "./HomeChildren/AboutChurch";
 
 const HomeScreen = () => {
   return (
-    <div>
-      <Sidebar />
+    <>
+      <MainElements />
       <AboutChurch />
       <AboutPaster />
-    </div>
+    </>
   )
 }
 

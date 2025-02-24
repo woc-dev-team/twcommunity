@@ -1,18 +1,22 @@
 export const navListData = [
     {
         text: "Home", 
-        link: "#/home"
+        link: "#/home",
+        heights: 0
     },
     {
         text: "The Word Church", 
-        link: "#/twc"
+        link: "#/twc",
+        heights: 0
     },
     {
         text: "Paster", 
-        link: "#/paster"
+        link: "#/paster",
+        heights: 0
     },
     {
         text: "Information", 
-        link: "#/info"
+        link: "#/info",
+        heights: 0
     }
 ];

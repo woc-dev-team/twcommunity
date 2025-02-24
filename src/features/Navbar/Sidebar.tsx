@@ -9,8 +9,8 @@ const Sidebar = () => {
     return (
         <>
             {/* 사이드바 (모바일 메뉴) */}
-            <div className={`fixed top-0 left-0 h-full w-64 bg-white dark:bg-gray-900 shadow-lg transform transition-transform duration-300 ease-in-out z-50
-                ${isMenuOn ? "translate-x-0" : "-translate-x-full"}`}
+            <div className={`block c_md:hidden fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-900 shadow-lg transform transition-transform duration-300 ease-in-out z-50
+                ${isMenuOn ? "translate-x-0" : "translate-x-full"}`}
             >
                 <button 
                     className="absolute top-5 right-5 text-gray-800 dark:text-white"
@@ -21,7 +21,12 @@ const Sidebar = () => {
 
                 <ul className="mt-10 space-y-4 p-5">
                     {navListData.map((menuList, index) => (
-                        <NavList key={index} menuText={menuList.text} menuLink={menuList.link} />
+                        <NavList
+                            key={index}
+                            menuText={menuList.text}
+                            menuLink={menuList.link}
+                            menuLocation={menuList.heights}
+                        />
                     ))}
                 </ul>
             </div>

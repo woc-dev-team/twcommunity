@@ -23,3 +23,13 @@
         transform: scale(1.02);
     }
 }
+
+.on-image {
+    background-image: url('./assets/images/twc_front_door.jpeg');
+}
+
+@media (min-width: 950px) {
+    .off-image {
+        background-image: none;
+    }
+}
