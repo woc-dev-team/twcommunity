@@ -10,8 +10,7 @@ const Navbar = () => {
     return (
         // shadow-md
         <nav className={`sticky top-0 z-40 bg-white dark:bg-black transition-all duration-500 ease-in-out w-full
-            ${isScrolled ? 'transition-shadow shadow-md dark:shadow-gray-900' : 'shadow-none'}
-        `}>
+            ${isScrolled ? 'transition-shadow shadow-md dark:shadow-gray-900' : 'shadow-none'}`}>
             <div className="max-w-screen-w_max w-full flex items-center justify-between mx-auto p-4">
                 {/* 네비게이션 바 로고 */}
                 <a href="https://woc-dev-team.github.io/twcommunity" className="flex items-center space-x-3 rtl:space-x-reverse">

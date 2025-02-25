@@ -4,11 +4,11 @@ import AboutChurch from "./HomeChildren/AboutChurch/AboutChurch";
 
 const HomeScreen = () => {
   return (
-    <>
+    <div id="pastor" >
       <MainElements />
       <AboutChurch />
       <AboutPaster />
-    </>
+    </div>
   )
 }
 

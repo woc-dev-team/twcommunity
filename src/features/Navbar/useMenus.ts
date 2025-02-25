@@ -6,8 +6,13 @@ const useMenus = () => {
     const [isMenuOn, setIsMenuOn] = useAtom<boolean>(menuToggleAtom);
     const [isScrolled, setIsScrolled] = useAtom<boolean>(scrollAtom);
 
-    const moveScrollTo = (scrollTo: number) => {
-        window.scrollTo({ top: scrollTo, behavior: 'smooth' });
+    const moveScrollTo = (id: string) => {
+        const section = document.getElementById(id);
+        if (section) {
+            const offset = 80; // Navbar 높이 고려
+            const topPosition = section.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top: topPosition, behavior: "smooth" });
+        }
     }
 
     useEffect(() => {
