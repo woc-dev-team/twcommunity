@@ -1,5 +1,5 @@
 import MainElements from "./HomeChildren/MainElements/MainElements";
-import AboutPaster from "./HomeChildren/AboutPaster";
+import AboutPaster from "./HomeChildren/AboutPastor/AboutPastor";
 import AboutChurch from "./HomeChildren/AboutChurch/AboutChurch";
 
 const HomeScreen = () => {

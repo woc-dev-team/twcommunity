@@ -10,8 +10,8 @@ export const navListData = [
         heights: 0
     },
     {
-        text: "Paster", 
-        link: "#/paster",
+        text: "Pastor", 
+        link: "#/pastor",
         heights: 0
     },
     {
