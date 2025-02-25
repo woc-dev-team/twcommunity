@@ -1,6 +1,6 @@
 import { navListData } from "../../entities/datas";
-import useMenus from "./useMenus";
-import NavList from "./NavList";
+import useMenus from "../Navbar/useMenus";
+import NavList from "../Navbar/NavList";
 import { X } from "lucide-react";
 
 const Sidebar = () => {

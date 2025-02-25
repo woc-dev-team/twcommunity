@@ -1,7 +1,7 @@
 import DarkMode from "./features/DarkMode/DarkMode";
 import HomeScreen from "./pages/HomeScreen";
 import Navbar from "./features/Navbar/Navbar";
-import Sidebar from "./features/Navbar/Sidebar";
+import Sidebar from "./features/Sidebar/Sidebar";
 
 const App = () => {
   return (

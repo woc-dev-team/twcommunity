@@ -13,6 +13,7 @@ const useMenus = () => {
             const topPosition = section.getBoundingClientRect().top + window.scrollY - offset;
             window.scrollTo({ top: topPosition, behavior: "smooth" });
         }
+        setIsMenuOn(false);
     }
 
     useEffect(() => {
