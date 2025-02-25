@@ -4,7 +4,7 @@ import AboutChurch from "./HomeChildren/AboutChurch/AboutChurch";
 
 const HomeScreen = () => {
   return (
-    <div id="pastor" >
+    <div id="home" >
       <MainElements />
       <AboutChurch />
       <AboutPaster />
