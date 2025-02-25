@@ -1,5 +1,5 @@
 import GlobeAltIcon from "@heroicons/react/24/solid/GlobeAsiaAustraliaIcon";
-import KoreaIcon from "../assets/images/south-korea.png";
+import KoreaIcon from "@/assets/images/south-korea.png";
 import useMenus from "./Navbar/useMenus";
 
 const LanguagePack = () => {

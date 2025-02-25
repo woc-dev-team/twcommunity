@@ -1,7 +1,7 @@
 import LanguagePack from "../LanguagePack";
 import NavList from "./NavList";
 import { navListData } from "../../entities/datas";
-import navLogo from "../../assets/images/nav_logo.svg";
+import navLogo from "@/assets/images/nav_logo.svg";
 import useMenus from "./useMenus";
 
 const Navbar = () => {
