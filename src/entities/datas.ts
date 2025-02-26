@@ -14,11 +14,11 @@ export const navListData = [
         link: "#/pastor",
         heights: 0
     },
-    {
-        text: "Information", 
-        link: "#/info",
-        heights: 0
-    }
+    // {
+    //     text: "Information", 
+    //     link: "#/info",
+    //     heights: 0
+    // }
 ];
 
 export const mapData = {
