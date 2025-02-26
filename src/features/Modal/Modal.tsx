@@ -2,22 +2,22 @@ import React from "react";
 import {
   Button,
   Dialog,
-  DialogHeader,
   DialogBody,
   DialogFooter,
 } from "@material-tailwind/react";
 
-interface CustomDialogProps {
+interface ModalProps {
+    className: string;
     open: boolean;
     handleOpen: () => void;
-    title?: string;
     children: React.ReactNode;
 }
  
-const CustomDialog = ({open, handleOpen, title, children}: CustomDialogProps) => {    
+const Modal = ({className, open, handleOpen, children}: ModalProps) => {    
     return (
         <>
             <Dialog
+                className={className}
                 open={open}
                 handler={handleOpen}
                 animate={{
@@ -25,16 +25,15 @@ const CustomDialog = ({open, handleOpen, title, children}: CustomDialogProps) =>
                     unmount: { scale: 0.9, y: -100 },
                 }}
             >
-                <DialogHeader>{title}</DialogHeader>
                 <DialogBody>{children}</DialogBody>
                 <DialogFooter>
-                    <button variant="text" color="black" onClick={handleOpen} className="mr-1">
+                    <Button variant="text" color="black" onClick={handleOpen} className="mr-1">
                         <span>닫기</span>
-                    </button>
+                    </Button>
                 </DialogFooter>
             </Dialog>
         </>
     );
 }
 
-export default CustomDialog;
+export default Modal;
