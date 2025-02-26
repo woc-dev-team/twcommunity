@@ -26,7 +26,7 @@ const useMaps = () => {
               position: naver.maps.Position.TOP_RIGHT,
             },
             center: new naver.maps.LatLng(mapData.latitude, mapData.longitude),
-            zoom: 17,
+            zoom: 18,
         };
 
         // 지도 초기화 확인
@@ -46,7 +46,7 @@ const useMaps = () => {
                 window.open(`https://map.naver.com/p/entry/place/1886682973?c=15.00,0,0,0,dh`, 'woc_naver_map');
             } else {
                 mapInstance?.setCenter(new naver.maps.LatLng(mapData.latitude, mapData.longitude));
-                mapInstance?.setZoom(17);
+                mapInstance?.setZoom(18);
             }
         });
     
@@ -58,7 +58,7 @@ const useMaps = () => {
         // 스크립트 로딩 확인
         if (typeof naver === "undefined") {
           loadScript(
-            "https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=YOUR_CLIENT_ID",
+            "https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=7o1ui3zo6f",
             initMap
           );
         } else {

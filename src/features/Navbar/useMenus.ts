@@ -17,7 +17,7 @@ const useMenus = () => {
     }
 
     useEffect(() => {
-        const handleScroll = () => setIsScrolled(window.scrollY > 10);
+        const handleScroll = () => setIsScrolled(window.scrollY > 15);
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
