@@ -20,3 +20,8 @@ export const navListData = [
         heights: 0
     }
 ];
+
+export const mapData = {
+    latitude: 37.6194599,
+    longitude: 127.0725184
+}
