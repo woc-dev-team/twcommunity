@@ -37,3 +37,7 @@ html {
         background-image: none;
     }
 }
+
+.pastor_profile img {
+    transform: scale(1.5) translateX(30px) translateY(20px);   /* 이미지 확대 */
+} 
