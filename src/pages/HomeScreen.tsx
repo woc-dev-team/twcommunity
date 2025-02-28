@@ -1,7 +1,7 @@
 import MainElements from "./HomeChildren/MainElements/MainElements";
 import AboutPaster from "./HomeChildren/AboutPastor/AboutPastor";
 import AboutChurch from "./HomeChildren/AboutChurch/AboutChurch";
-// import ChurchInfo from "./HomeChildren/ChurchInfo/ChurchInfo";
+import ChurchInfo from "./HomeChildren/ChurchInfo/ChurchInfo";
 
 const HomeScreen = () => {
   return (
@@ -9,7 +9,7 @@ const HomeScreen = () => {
       <MainElements />
       <AboutChurch />
       <AboutPaster />
-      {/* <ChurchInfo /> */}
+      <ChurchInfo />
     </div>
   )
 }

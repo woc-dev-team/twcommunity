@@ -1,8 +1,9 @@
-import ChurchImages from "./ChurchImages";
 import MainTexts from "./MainTexts";
 import Modal from "../../../features/Modal/Modal";
-import NaverMaps from "../../..//features/NaverMaps/NaverMaps";
-import useMaps from "../../..//features/NaverMaps/useMaps";
+import NaverMaps from "../../../features/NaverMaps/NaverMaps";
+import useMaps from "../../../features/NaverMaps/useMaps";
+import ChurchImage from "../../../assets/images/twc_front_door.jpeg"
+import CustomImage from "../../../features/Image/CustomImage";
 
 const MainElements = () => {
     const { isMapOpen, setIsMapOpen }  = useMaps();
@@ -19,7 +20,7 @@ const MainElements = () => {
                     <MainTexts />
                 </div>
                 <div className="block relative row-span-4 h-screen c_image:col-span-6 transition-all duration-500 ease-in-out">
-                    <ChurchImages />
+                    <CustomImage src={ChurchImage} alt={"교회 메인 이미지"} />
                 </div>
             </div>
         </>
