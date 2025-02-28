@@ -2,9 +2,9 @@ const ChurchVision = () => {
     return (
         <div className="w-full c_image:col-span-6 z-30">
             <p className="dark:text-white -ms-1 text-xl c_sm:text-2xl c_md:text-5xl font-bold">The Word Church's Vision</p>
-            <p className="dark:text-white text-sm c_sm:text-md c_md:text-xl mt-1 font-sans">말씀 위에 세운 교회의 비전을 소개합니다</p>
+            <p className="dark:text-white text-sm c_sm:text-md c_md:text-xl mt-1 font-sans">더워드교회의 비전</p>
             <p className="dark:text-white text-sm c_sm:text-md c_md:text-lg mt-7 font-thin"><span className="font-normal">The Word Church</span>는 에베소서 2장 20절 말씀대로 사도들과 선지자들의 터 위에 세운 교회입니다.</p>
-            <p className="dark:text-white text-sm c_sm:text-md c_md:text-lg mt-3 font-thin"><span className="font-normal">The Word Church</span>(말씀 위에 세운 교회, 합동)는 <span className="font-normal">"말씀 위에 세운 교회"</span> 입니다.</p>
+            <p className="dark:text-white text-sm c_sm:text-md c_md:text-lg mt-3 font-thin"><span className="font-normal">The Word Church</span>(합동)는 <span className="font-normal">"말씀 위에 세운 교회"</span> 입니다.</p>
             <p className="dark:text-white text-sm c_sm:text-md c_md:text-lg font-thin">무엇보다 말씀이 중심이고, 말씀이 교회의 심장이기 때문에 말씀을 강조하기 위해 그리고 독특함 을 위해 이름을 정하였습니다.</p>
             <p className="dark:text-white text-sm c_sm:text-md c_md:text-lg mt-3 font-thin"><span className="font-normal">The Word Church</span>는 preaching church와 teaching church를 핵심 사역으로 생각합니다.</p>
             <p className="dark:text-white text-sm c_sm:text-md c_md:text-lg font-thin">교회는 언제나 말씀을 선포하고 말씀을 가르쳐야합니다.</p>
