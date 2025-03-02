@@ -5,8 +5,8 @@ export const navListData = [
         heights: 0
     },
     {
-        text: "The Word Church", 
-        link: "#/twc",
+        text: "Vision",
+        link: "#/vision",
         heights: 0
     },
     {

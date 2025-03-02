@@ -1,4 +1,4 @@
-import PastorParkProfileImg from "../../../assets/images/pastor-profile.jpeg";
+import PastorParkProfileImg from "../../../assets/images/pastor-park.png";
 import CustomImage from "../../../features/Image/CustomImage";
 import PastorTexts from "./PastorTexts";
 
@@ -9,8 +9,13 @@ const AboutPaster = () => {
                 <div className="text-black dark:text-white h-screen c_md:col-span-2">
                     <PastorTexts profileImg={PastorParkProfileImg} />
                 </div>
-                <div className="relative h-screen w-full c_md:col-span-3 hidden c_md:block">
-                    <CustomImage alt={"목사님 프로필 이미지"} src={PastorParkProfileImg} />
+                <div className="hidden c_md:block c_md:col-span-3 relative flex w-auto min-h-screen justify-center items-center">
+                    <CustomImage
+                        className="w-3/6 h-auto object-cover ml-auto transition-all duration-500 ease-in-out"
+                        alt="목사님 프로필 이미지"
+                        src={PastorParkProfileImg}
+                        gradation="b"
+                    />
                 </div>
             </div>
         </>

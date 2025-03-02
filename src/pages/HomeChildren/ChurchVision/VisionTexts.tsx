@@ -1,4 +1,4 @@
-const ChurchVision = () => { 
+const VisionTexts = () => { 
     return (
         <div className="w-full c_image:col-span-6 z-30">
             <p className="dark:text-white -ms-1 text-xl c_sm:text-2xl c_md:text-5xl font-bold">The Word Church's Vision</p>
@@ -15,4 +15,4 @@ const ChurchVision = () => {
     )
 }
 
-export default ChurchVision;
+export default VisionTexts;

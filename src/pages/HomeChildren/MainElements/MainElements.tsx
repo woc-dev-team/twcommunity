@@ -19,8 +19,13 @@ const MainElements = () => {
                 <div className="h-full p-5 c_md:ps-20 c_md:pt-20 row-span-2 c_image:col-span-4 z-10">
                     <MainTexts />
                 </div>
-                <div className="block relative row-span-4 h-screen c_image:col-span-6 transition-all duration-500 ease-in-out">
-                    <CustomImage src={ChurchImage} alt={"교회 메인 이미지"} />
+                {/* 콤푸타 버전 */}
+                <div className="block relative row-span-4 h-screen c_image:col-span-6 c_image:block hidden">
+                    <CustomImage className="w-full h-full object-cover transition-all duration-500 ease-in-out" src={ChurchImage} alt={"교회 메인 이미지"} gradation="tbl"/>
+                </div>
+                {/* 모바일 버전 */}
+                <div className="block relative row-span-4 h-screen c_image:col-span-6 c_image:hidden block">
+                    <CustomImage className="w-full h-full object-cover transition-all duration-500 ease-in-out" src={ChurchImage} alt={"교회 메인 이미지"} gradation="tb"/>
                 </div>
             </div>
         </>

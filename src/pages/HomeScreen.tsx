@@ -1,15 +1,15 @@
 import MainElements from "./HomeChildren/MainElements/MainElements";
+import ChurchVision from "./HomeChildren/ChurchVision/ChurchVision";
 import AboutPaster from "./HomeChildren/AboutPastor/AboutPastor";
 import AboutChurch from "./HomeChildren/AboutChurch/AboutChurch";
-import ChurchInfo from "./HomeChildren/ChurchInfo/ChurchInfo";
 
 const HomeScreen = () => {
   return (
     <div id="home">
       <MainElements />
-      <AboutChurch />
+      <ChurchVision />
       <AboutPaster />
-      <ChurchInfo />
+      <AboutChurch />
     </div>
   )
 }

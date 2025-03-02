@@ -9,13 +9,14 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "module": "ESNext",
+    "module": "NodeNext",
     "composite": true,
     "noEmit": false,
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
     "target": "ESNext",
     "jsx": "react-jsx"
   }
