@@ -20,6 +20,8 @@ app.get('/search/blog', async (req: Request, res: Response): Promise<void> => {
 
     const apiUrl = `https://openapi.naver.com/v1/search/blog?query=${encodeURIComponent(query)}&display=100&sort=date`;
 
+    const formatDate = (date: string) => `${date.slice(2, 4)}.${date.slice(4, 6)}.${date.slice(6, 8)}`;
+
     try {
         const response = await axios.get(apiUrl, {
             headers: {
@@ -31,9 +33,11 @@ app.get('/search/blog', async (req: Request, res: Response): Promise<void> => {
         const reduceData = response.data.items.reduce((acc: Item[], item: Item) => {
             if (item.link.includes("thewordchurch__")) {
                 acc.push({
-                    title: item.title,
-                    link: item.link,
-                    description: item.description
+                    title: item.title.replace(/<b>/g, " ").replace(/<\/b>/g, " "),
+                    link: item.link.replace(/<b>/g, " ").replace(/<\/b>/g, " "),
+                    description: item.description.replace(/<b>/g, " ").replace(/<\/b>/g, " "),
+                    bloggername: item.bloggername.replace(/<b>/g, " ").replace(/<\/b>/g, " "),
+                    postdate: formatDate(item.postdate)
                 });
             }
             return acc;

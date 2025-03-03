@@ -1,23 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { BlogItem } from "../../entities/interface";
+import BlogList from "./BlogList";
 
 const Blog = () => {
-    const [data, setData] = useState<JSON>()
+    const [data, setData] = useState<BlogItem[] | null>(null);
 
-    const searchBlog = async (query: string) => {
+    const searchBlog = async () => {
         try {
-          const response = await fetch(`/search/blog?query=${encodeURIComponent(query)}`);
+          const response = await fetch(`/search/blog?query=더워드`);
           const datas = await response.json();
-          console.log(datas);
           setData(datas);
         } catch (error) {
           console.error('Error fetching data:', error);
         }
     };
 
+    useEffect(() => {
+      searchBlog();
+    }, [])
+
     return (
-        <div>
-            <button onClick={() => searchBlog("더워드")}>검색하기</button>
-            <pre>{JSON.stringify(data, null, 2)}</pre>
+        <div className="h-full w-full text-lg place-items-center">
+          <p className="text-3xl mt-10">교회 소식</p>
+          <p className="text-lg font-thin mb-10 text-blue-900 dark:text-gray-200">Blog</p>
+          <ul className="text-start c_md:w-3/5 font-sans">
+            {data ? (
+              data.map((item, index) => <BlogList index={index} item={item} />)
+            ) : (
+              <li>교회 소식 불러오는 중...</li>
+            )}
+          </ul>
         </div>
     )
 };

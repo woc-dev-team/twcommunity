@@ -3,6 +3,8 @@ interface Item {
     title: string;
     link: string;
     description: string;
+    bloggername: string;
+    postdate: string;
 }
 
 interface BlogItem {
@@ -10,6 +12,7 @@ interface BlogItem {
     description: string;
     link: string;
     bloggername: string;
+    postdate: string;
 }
 
 
@@ -42,6 +45,11 @@ interface PastorTextsProps {
     profileImg: string;
 }
 
+interface BlogListProps {
+    index: number;
+    item: BlogItem;
+}
+
 export type {
     Item,
     BlogItem,
@@ -49,5 +57,6 @@ export type {
     NavListProps,
     NaverMapsProps,
     PastorTextsProps,
-    CustomImageProps
+    CustomImageProps,
+    BlogListProps
 }
