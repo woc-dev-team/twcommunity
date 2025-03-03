@@ -1,11 +1,5 @@
-import { atom } from 'jotai';
-
-export interface BlogItem {
-    title: string;
-    description: string;
-    link: string;
-    bloggername: string;
-}
+import { atom } from "jotai";
+import { BlogItem } from "./interface";
 
 export const darkModeAtom = atom<boolean>(localStorage.getItem('darkMode') === 'true');
 export const menuToggleAtom = atom<boolean>(false);

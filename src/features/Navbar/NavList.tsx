@@ -1,10 +1,5 @@
 import useMenus from "./useMenus";
-
-interface NavListProps {
-    menuText: string;
-    menuLink: string;
-    menuLocation: number;
-}
+import { NavListProps } from "../../entities/interface";
 
 const NavList = ({menuText, menuLink}: NavListProps) => {
     const { moveScrollTo } = useMenus();

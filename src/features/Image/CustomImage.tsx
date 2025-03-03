@@ -1,9 +1,4 @@
-interface CustomImageProps {
-    alt: string;
-    src: string;
-    gradation: string;
-    className: string;
-}
+import { CustomImageProps } from "../../entities/interface";
 
 const CustomImage = ({alt, src, gradation, className}: CustomImageProps) => {
     return (

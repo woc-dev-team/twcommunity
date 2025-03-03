@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import axios from 'axios';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import { Item } from "./entities/interface";
 
 dotenv.config();
 
@@ -9,12 +10,6 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-
-interface Item {
-    title: string;
-    link: string;
-    description: string;
-}
 
 app.get('/search/blog', async (req: Request, res: Response): Promise<void> => {
     const query = req.query.query as string;

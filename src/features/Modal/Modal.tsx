@@ -1,11 +1,4 @@
-import React from "react";
-
-interface ModalProps {
-    title: string;
-    open: boolean;
-    handler: () => void;
-    children: React.ReactNode;
-}
+import { ModalProps } from "../../entities/interface";
  
 const Modal = ({title, open, handler, children}: ModalProps) => {    
     return (

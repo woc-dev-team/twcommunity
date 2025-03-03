@@ -1,8 +1,5 @@
 import CustomImage from "../../../features/Image/CustomImage";
-
-interface PastorTextsProps {
-    profileImg: string;
-}
+import { PastorTextsProps } from "../../../entities/interface";
 
 const PastorTexts = ({profileImg}: PastorTextsProps) => {
     return (

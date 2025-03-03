@@ -1,8 +1,5 @@
-import useMaps from './useMaps';
-
-interface NaverMapsProps {
-    className: string;
-}
+import useMaps from "./useMaps";
+import { NaverMapsProps } from "../../entities/interface";
 
 const NaverMaps = ({className}: NaverMapsProps) => {
     const { isMapLoaded } = useMaps();
