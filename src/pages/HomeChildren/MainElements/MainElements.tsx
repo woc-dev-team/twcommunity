@@ -12,7 +12,7 @@ const MainElements = () => {
     return (
         <>
             <Modal title="위치 정보" open={isMapOpen} handler={handleOpen}>
-                <NaverMaps />
+                <NaverMaps className="w-full h-full" />
             </Modal>
             
             <div className="h-screen grid grid-rows-6 c_image:grid-cols-10 gap-4 text-start transition-all duration-500 ease-in-out">

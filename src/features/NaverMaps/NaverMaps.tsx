@@ -1,11 +1,15 @@
 import useMaps from './useMaps';
 
-const NaverMaps = () => {
+interface NaverMapsProps {
+    className: string;
+}
+
+const NaverMaps = ({className}: NaverMapsProps) => {
     const { isMapLoaded } = useMaps();
 
     return (
         <>
-            <div className="w-full h-full">
+            <div className={className}>
                 {isMapLoaded && (
                     <div id="map" className="h-full w-full" />
                 )}
