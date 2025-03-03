@@ -4,11 +4,17 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 
 dotenv.config();
+
 const app = express();
-const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
+
+interface Item {
+    title: string;
+    link: string;
+    description: string;
+}
 
 app.get('/search/blog', async (req: Request, res: Response): Promise<void> => {
     const query = req.query.query as string;
@@ -17,17 +23,28 @@ app.get('/search/blog', async (req: Request, res: Response): Promise<void> => {
         return;
     }
 
-    const apiUrl = `https://openapi.naver.com/v1/search/blog?query=${encodeURIComponent(query)}&display=100`;
+    const apiUrl = `https://openapi.naver.com/v1/search/blog?query=${encodeURIComponent(query)}&display=100&sort=date`;
 
     try {
         const response = await axios.get(apiUrl, {
             headers: {
-                'X-Naver-Client-Id': "55gNZJeKLjjxwPSWalkT",
-                'X-Naver-Client-Secret': "QFPPpwL_jB"
-            },
+                'X-Naver-Client-Id': process.env.X_Naver_Client_Id,
+                'X-Naver-Client-Secret': process.env.X_Naver_Client_Secret
+            }
         });
-        console.log(response.data);
-        res.json(response.data);
+
+        const reduceData = response.data.items.reduce((acc: Item[], item: Item) => {
+            if (item.link.includes("thewordchurch__")) {
+                acc.push({
+                    title: item.title,
+                    link: item.link,
+                    description: item.description
+                });
+            }
+            return acc;
+        }, []);
+
+        res.json(reduceData);
     } catch (error: unknown) {
         if (axios.isAxiosError(error)) {
             console.error('Error:', error.response?.status, error.response?.data);
@@ -39,6 +56,6 @@ app.get('/search/blog', async (req: Request, res: Response): Promise<void> => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+app.listen(process.env.PORT, () => {
+    console.log(`Server running at http://localhost:${process.env.PORT}`);
 });

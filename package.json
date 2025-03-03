@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev":"run vite",
+    "dev": "run vite",
     "server": "node --loader ts-node/esm src/index.ts",
     "client": "vite",
     "build": "tsc -b && vite build",
@@ -52,5 +52,10 @@
     "vite": "^6.1.0"
   },
   "format": "prettier --write --cache .",
-  "proxy": "https://openapi.naver.com"
+  "proxy": "https://openapi.naver.com",
+  "description": "",
+  "main": "eslint.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
