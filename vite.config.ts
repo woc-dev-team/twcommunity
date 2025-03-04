@@ -2,6 +2,9 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tsconfigPaths from "vite-tsconfig-paths";
 import path from "path";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
@@ -17,7 +20,7 @@ export default defineConfig({
     strictPort: true, // 포트가 사용 중이면 실행 중단
     proxy: {
       "/search": {
-        target: "http://3.39.239.164:3000", // 백엔드 서버 주소
+        target: process.env.AWS_PUBLIC_IP, // 백엔드 서버 주소
         changeOrigin: true,
         secure: false,
       },
