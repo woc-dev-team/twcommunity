@@ -56,5 +56,5 @@ app.get('/search/blog', async (req: Request, res: Response): Promise<void> => {
 });
 
 app.listen(process.env.PORT, () => {
-    console.log(`Server running at http://localhost:${process.env.PORT}`);
+    console.log(`Server running at https://172.31.34.158:${process.env.PORT}`);
 });

@@ -14,7 +14,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/search': {
-        target: 'http://localhost:3000',
+        target: 'https://172.31.34.158:3000',
         changeOrigin: true,
         secure: false,
       },

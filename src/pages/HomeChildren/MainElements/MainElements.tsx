@@ -20,11 +20,11 @@ const MainElements = () => {
                     <MainTexts />
                 </div>
                 {/* 콤푸타 버전 */}
-                <div className="block relative row-span-4 h-screen c_image:col-span-6 c_image:block hidden">
+                <div className="relative row-span-4 h-screen c_image:col-span-6 c_image:block hidden">
                     <CustomImage className="w-full h-full object-cover transition-all duration-500 ease-in-out" src={ChurchImage} alt={"교회 메인 이미지"} gradation="tbl"/>
                 </div>
                 {/* 모바일 버전 */}
-                <div className="block relative row-span-4 h-screen c_image:col-span-6 c_image:hidden block">
+                <div className="relative row-span-4 h-screen c_image:col-span-6 c_image:hidden block">
                     <CustomImage className="w-full h-full object-cover transition-all duration-500 ease-in-out" src={ChurchImage} alt={"교회 메인 이미지"} gradation="tb"/>
                 </div>
             </div>
