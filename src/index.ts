@@ -9,7 +9,10 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST'],
+}));
 app.use(express.json());
 
 app.get('/search/blog', async (req: Request, res: Response): Promise<void> => {
@@ -26,8 +29,8 @@ app.get('/search/blog', async (req: Request, res: Response): Promise<void> => {
     try {
         const response = await axios.get(apiUrl, {
             headers: {
-                'X-Naver-Client-Id': process.env.X_Naver_Client_Id,
-                'X-Naver-Client-Secret': process.env.X_Naver_Client_Secret
+                'X-Naver-Client-Id': "55gNZJeKLjjxwPSWalkT",
+                'X-Naver-Client-Secret': "QFPPpwL_jB"
             }
         });
 
@@ -68,6 +71,6 @@ const getLocalIP = () => {
     return '127.0.0.1'; // 기본값
 };
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server running at ${getLocalIP()}:${process.env.PORT}`);
+app.listen(3000, () => {
+    console.log(`Server running at ${getLocalIP()}:3000`);
 });
