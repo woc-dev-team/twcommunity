@@ -8,16 +8,19 @@ export default defineConfig({
   base: "/twcommunity/",
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src")
-    }
+      "@": path.resolve(__dirname, "src"),
+    },
   },
   server: {
+    host: "0.0.0.0", // 🔹 외부에서 접근 가능하게 설정
+    port: 5173, // 기본 포트 (변경 가능)
+    strictPort: true, // 포트가 사용 중이면 실행 중단
     proxy: {
-      '/search': {
-        target: 'https://172.31.34.158:3000',
+      "/search": {
+        target: "http://172.31.34.158:3000", // 백엔드 서버 주소
         changeOrigin: true,
         secure: false,
       },
     },
-  }
+  },
 });
