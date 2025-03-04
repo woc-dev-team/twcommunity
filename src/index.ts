@@ -3,6 +3,7 @@ import axios from 'axios';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import { Item } from "./entities/interface";
+import os from 'os';
 
 dotenv.config();
 
@@ -55,6 +56,18 @@ app.get('/search/blog', async (req: Request, res: Response): Promise<void> => {
     }
 });
 
+const getLocalIP = () => {
+    const interfaces = os.networkInterfaces();
+    for (const interfaceName in interfaces) {
+      for (const iface of interfaces[interfaceName] || []) {
+        if (iface.family === 'IPv4' && !iface.internal) {
+          return iface.address; // 내부 IP 주소 반환
+        }
+      }
+    }
+    return '127.0.0.1'; // 기본값
+};
+
 app.listen(process.env.PORT, () => {
-    console.log(`Server running at https://172.31.34.158:${process.env.PORT}`);
+    console.log(`Server running at ${getLocalIP()}:${process.env.PORT}`);
 });
