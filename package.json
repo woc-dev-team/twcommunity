@@ -52,7 +52,7 @@
     "vite": "^6.1.0"
   },
   "format": "prettier --write --cache .",
-  "proxy": "https://openapi.naver.com",
+  "proxy": "http://3.39.239.164:3000",
   "description": "",
   "main": "eslint.config.js",
   "keywords": [],
