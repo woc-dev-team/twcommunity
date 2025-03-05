@@ -52,7 +52,6 @@
     "vite": "^6.1.0"
   },
   "format": "prettier --write --cache .",
-  "proxy": "https://twcommunity-server.store",
   "description": "",
   "main": "eslint.config.js",
   "keywords": [],

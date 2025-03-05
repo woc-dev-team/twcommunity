@@ -4,11 +4,10 @@ import BlogList from "./BlogList";
 
 const Blog = () => {
     const [data, setData] = useState<BlogItem[] | null>(null);
-    const API_BASE_URL = import.meta.env.VITE_API_URL;
 
     const searchBlog = async () => {
         try {
-          const response = await fetch(`${API_BASE_URL}/search/blog?query=더워드`);
+          const response = await fetch(`/search/blog?query=더워드`);
           const datas = await response.json();
           setData(datas);
         } catch (error) {
