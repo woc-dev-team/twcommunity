@@ -9,7 +9,7 @@ const AboutPaster = () => {
                 <div className="text-black dark:text-white h-screen c_md:col-span-2">
                     <PastorTexts profileImg={PastorParkProfileImg} />
                 </div>
-                <div className="hidden c_md:block c_md:col-span-3 relative flex w-auto min-h-screen justify-center items-center">
+                <div className="hidden c_md:block c_md:col-span-3 relative w-auto min-h-screen justify-center items-center">
                     <CustomImage
                         className="w-3/6 h-auto object-cover ml-auto transition-all duration-500 ease-in-out"
                         alt="목사님 프로필 이미지"

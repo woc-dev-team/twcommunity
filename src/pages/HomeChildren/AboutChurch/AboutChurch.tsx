@@ -4,8 +4,8 @@ const AboutChurch = () => {
     return (
         <>
             <div id="info" className="h-full w-full p-16 text-6xl text-center transition-all duration-500 ease-in-out">
-                <p className="text-4xl">교회 안내</p>
-                <p className="text-sm font-thin">더워드교회</p>
+                <p className="text-4xl dark:text-white">교회 안내</p>
+                <p className="text-sm font-thin dark:text-white">더워드교회</p>
                 <div className="h-full">
                     {/* 네이버 지도 뷰어 추가 */}
                     {/* <div className="h-full w-full text-3xl">오시는 길</div> */}

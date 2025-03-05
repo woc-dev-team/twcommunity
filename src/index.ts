@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: '*',
+    origin: 'https://woc-dev-team.github.io/twcommunity/',
     methods: ['GET', 'POST'],
 }));
 app.use(express.json());
