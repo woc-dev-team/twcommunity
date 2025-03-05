@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "server": "node --loader ts-node/esm src/index.ts",
+    "server": "pm2 node --loader ts-node/esm src/index.ts",
     "client": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
