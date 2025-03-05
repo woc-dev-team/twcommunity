@@ -20,7 +20,7 @@ export default defineConfig({
     strictPort: true,
     proxy: {
       "/search": {
-        target: "http://3.39.239.164:3000",
+        target: "https://twcommunity-server.store",
         changeOrigin: true,
         secure: false,
       },
