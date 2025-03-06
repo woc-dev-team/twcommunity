@@ -1,11 +1,8 @@
 import express, { Request, Response } from 'express';
-import axios from 'axios';
-import dotenv from 'dotenv';
+import axios, { AxiosError } from 'axios';
 import cors from 'cors';
-import { Item } from "./entities/interface";
 import os from 'os';
-
-dotenv.config();
+import { Item } from "./types/interface";
 
 const app = express();
 
@@ -24,10 +21,13 @@ app.get('/search/blog', async (req: Request, res: Response): Promise<void> => {
 
     const apiUrl = `https://openapi.naver.com/v1/search/blog?query=${encodeURIComponent(query)}&display=100&sort=date`;
 
-    const formatDate = (date: string) => `${date.slice(2, 4)}.${date.slice(4, 6)}.${date.slice(6, 8)}`;
+    const formatDate = (date: string) => {
+        const dateObj = new Date(date);
+        return new Intl.DateTimeFormat('ko-KR').format(dateObj);
+    };    
 
     try {
-        const response = await axios.get(apiUrl, {
+        const response = await axios.get<{ items: Item[] }>(apiUrl, {
             headers: {
                 'X-Naver-Client-Id': "55gNZJeKLjjxwPSWalkT",
                 'X-Naver-Client-Secret': "QFPPpwL_jB"
@@ -35,7 +35,7 @@ app.get('/search/blog', async (req: Request, res: Response): Promise<void> => {
         });
 
         const reduceData = response.data.items.reduce((acc: Item[], item: Item) => {
-            if (acc.length >= 10) return acc; 
+            if (acc.length >= 10) return acc;
 
             if (item.link.includes("thewordchurch__")) {
                 acc.push({
@@ -50,14 +50,16 @@ app.get('/search/blog', async (req: Request, res: Response): Promise<void> => {
         }, []);
 
         res.json(reduceData);
-    } catch (error: unknown) {
-        if (axios.isAxiosError(error)) {
-            console.error('Error:', error.response?.status, error.response?.data);
-            res.status(error.response?.status || 500).json({ error: 'Failed to fetch data' });
+    } catch (error) {
+        if (error instanceof AxiosError) {
+            const status = error.response?.status ?? 500;
+            const data = error.response?.data ?? 'No error data available';
+            console.error('Axios Error:', status, data);
+            res.status(status).json({ error: 'Failed to fetch data' });
         } else {
-            console.error('Error:', error);
+            console.error('Unknown Error:', error);
             res.status(500).json({ error: 'Failed to fetch data' });
-        }
+        }        
     }
 });
 

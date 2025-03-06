@@ -1,12 +1,4 @@
 // Data Props Interfaces
-interface Item {
-    title: string;
-    link: string;
-    description: string;
-    bloggername: string;
-    postdate: string;
-}
-
 interface BlogItem {
     title: string;
     description: string;
