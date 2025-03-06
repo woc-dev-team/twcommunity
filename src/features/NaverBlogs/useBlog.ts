@@ -8,7 +8,7 @@ const useBlog = () => {
   const [active, setActive] = useAtom<number | null>(activeAtom);
   const [data, setData] = useAtom<BlogItem[]>(blogAtom);
 
-  const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+  const PROXY = window.location.hostname === 'localhost' ? '' : 'https://twcommunity-server.store';
   const URL = `${PROXY}/search/blog`;
 
   console.log('Request URL:', URL);
