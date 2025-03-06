@@ -1,37 +1,26 @@
-import { useEffect, useState } from "react";
-import { BlogItem } from "../../entities/interface";
+import { useEffect } from "react";
 import BlogList from "./BlogList";
+import useBlog from "./useBlog";
+import { NaverMapsProps } from "../../entities/interface";
 
-const Blog = () => {
-    const [data, setData] = useState<BlogItem[] | null>(null);
+const Blog = ({className}: NaverMapsProps) => {
+  const { data, searchBlog } = useBlog();
 
-    const searchBlog = async () => {
-        try {
-          const response = await fetch(`/search/blog?query=더워드`);
-          const datas = await response.json();
-          setData(datas);
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
-    };
+  useEffect(() => {
+    searchBlog();
+  }, [])
 
-    useEffect(() => {
-      searchBlog();
-    }, [])
-
-    return (
-        <div className="h-full w-full text-lg place-items-center">
-          <p className="text-3xl mt-10 text-black dark:text-white">교회 소식</p>
-          <p className="text-lg font-thin mb-10 text-blue-900 dark:text-blue-200">Blog</p>
-          <ul className="text-start c_md:w-3/5 font-sans">
-            {data ? (
-              data.map((item, index) => <BlogList index={index} item={item} />)
-            ) : (
-              <li>교회 소식 불러오는 중...</li>
-            )}
-          </ul>
-        </div>
-    )
+  return (
+    <>
+      <ul className={className}>
+        {data ? (
+          data.map((item, index) => <BlogList index={index} item={item} />)
+        ) : (
+          <li className="text-black dark:text-white text-2xl">교회 소식 불러오는 중...</li>
+        )}
+      </ul>
+    </>
+  )
 };
 
 export default Blog;

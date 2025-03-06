@@ -1,21 +1,24 @@
-import Blog from "../../../features/NaverBlogs/Blog";
+import ChurchNews from "./ChurchNews";
+import Counsel from "./Counsel";
+import Directions from "./Directions";
 
 const AboutChurch = () => {
     return (
         <>
             <div id="info" className="h-full w-full p-16 text-6xl text-center transition-all duration-500 ease-in-out">
-                <p className="text-4xl dark:text-white">교회 안내</p>
-                <p className="text-sm font-thin dark:text-white">더워드교회</p>
-                <div className="h-full">
-                    {/* 네이버 지도 뷰어 추가 */}
-                    {/* <div className="h-full w-full text-3xl">오시는 길</div> */}
-                    {/* 블로그 단장 필요 */}
-                    <Blog />
-                    {/*  */}
-                    {/* <div className="h-full w-full text-3xl">양육 신청 문의 및 상담 신청</div> */}
-                </div>
+            <p className="text-4xl c_md:text-5xl dark:text-white">교회 안내</p>
+            <p className="text-lg font-thin dark:text-white mb-10">더워드교회</p>
+
+            {/* 여기서 세 파트 */}
+            <div className="flex flex-col md:flex-row h-full w-full gap-5 mb-20">
+                <Directions />
+                <ChurchNews />
+                <Counsel />
             </div>
-            <p className="mb-3 text-xs text-center text-gray-300 hover:text-gray-700">Developed by CreatyJohnKwon & Designed by TheWordChurch</p>
+
+            {/* 레퍼런스 */}
+            </div>
+            <p className="pb-3 text-xs text-center text-gray-300 hover:text-gray-700">Developed by CreatyJohnKwon & Designed by TheWordChurch</p>
         </>
     )
 }

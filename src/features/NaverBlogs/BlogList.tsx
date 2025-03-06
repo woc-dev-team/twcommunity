@@ -14,7 +14,7 @@ const BlogList = ({index, item}: BlogListProps) => {
                 </button>
                 <p className="col-span-1 text-end">{item.postdate}</p>
             </div>
-            <p className="text-xs">{item.description}</p>
+            <p className="text-xs text-start">{item.description}</p>
         </li>
     )
 }

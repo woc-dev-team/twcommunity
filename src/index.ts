@@ -35,6 +35,8 @@ app.get('/search/blog', async (req: Request, res: Response): Promise<void> => {
         });
 
         const reduceData = response.data.items.reduce((acc: Item[], item: Item) => {
+            if (acc.length >= 10) return acc; 
+
             if (item.link.includes("thewordchurch__")) {
                 acc.push({
                     title: item.title.replace(/<b>/g, " ").replace(/<\/b>/g, " "),
