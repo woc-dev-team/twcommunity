@@ -7,7 +7,6 @@ interface BlogItem {
     postdate: string;
 }
 
-
 // Components Props Interfaces
 interface CustomImageProps {
     alt: string;
@@ -43,7 +42,6 @@ interface BlogListProps {
 }
 
 export type {
-    Item,
     BlogItem,
     ModalProps,
     NavListProps,
