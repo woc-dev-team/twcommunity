@@ -8,9 +8,12 @@ const useBlog = () => {
   const [active, setActive] = useAtom<number | null>(activeAtom);
   const [data, setData] = useAtom<BlogItem[]>(blogAtom);
 
+  const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
+  const URL = `${PROXY}/search/blog`;
+
   const searchBlog = async () => {
     try {
-      const response = await axios.get('/search/blog', {
+      const response = await axios.get(URL, {
         params: {
           query: '더워드',
         },
