@@ -20,7 +20,7 @@ export default defineConfig({
     strictPort: true,
     proxy: {
       "/search": {
-        target: "http://twc-community-elastic-env.eba-nquntjkk.ap-northeast-2.elasticbeanstalk.com",
+        target: "https://twcommunity-server.store",
         changeOrigin: true,
         secure: false,
       },
