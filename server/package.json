@@ -25,5 +25,6 @@
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "madge": "^8.0.0"
-  }
+  },
+  "proxy": "http://twc-community-elastic-env.eba-nquntjkk.ap-northeast-2.elasticbeanstalk.com"
 }
