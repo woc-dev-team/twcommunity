@@ -6,6 +6,7 @@ import Sidebar from "./features/Sidebar/Sidebar";
 const App = () => {
   return (
     <div className="bg-white dark:bg-black p-0 m-0 transition-all duration-500 ease-in-out">
+      testtest
       <DarkMode />
       <Navbar />
       <HomeScreen />
