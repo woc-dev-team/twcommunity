@@ -55,5 +55,6 @@
   "main": "eslint.config.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "proxy": "http://twc-community-elastic-env.eba-nquntjkk.ap-northeast-2.elasticbeanstalk.com"
 }
