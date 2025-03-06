@@ -5,6 +5,7 @@ import os from 'os';
 import { Item } from "./types/interface";
 
 const app = express();
+const PORT = 8080;
 
 app.use(cors({
     origin: ["http://172.30.1.12:5173", "woc-dev-team.github.io/twcommunity/"],
@@ -75,6 +76,6 @@ const getLocalIP = () => {
     return '127.0.0.1'; // 기본값
 };
 
-app.listen(3000, () => {
-    console.log(`Server running at ${getLocalIP()}:3000`);
+app.listen(PORT, () => {
+    console.log(`Server running at ${getLocalIP()}:${PORT}`);
 });
