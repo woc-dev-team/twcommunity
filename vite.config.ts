@@ -19,7 +19,7 @@ export default defineConfig({
     port: 5173, 
     strictPort: true,
     proxy: {
-      "/search": {
+      "/search/blog": {
         target: "https://twcommunity-server.store",
         changeOrigin: true,
         secure: false,
