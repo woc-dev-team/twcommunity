@@ -20,7 +20,7 @@ export default defineConfig({
     strictPort: true,
     proxy: {
       "/search": {
-        target: "http://172.30.1.4:3000",
+        target: "http://twc-community-elastic-env.eba-nquntjkk.ap-northeast-2.elasticbeanstalk.com",
         changeOrigin: true,
         secure: false,
       },

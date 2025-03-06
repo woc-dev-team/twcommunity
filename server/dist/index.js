@@ -1,37 +1,3 @@
-"use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -41,20 +7,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const axios_1 = __importStar(require("axios"));
-const cors_1 = __importDefault(require("cors"));
-const os_1 = __importDefault(require("os"));
-const app = (0, express_1.default)();
-app.use((0, cors_1.default)({
+import express from 'express';
+import axios, { AxiosError } from 'axios';
+import cors from 'cors';
+import os from 'os';
+const app = express();
+const PORT = 8080;
+app.use(cors({
     origin: ["http://172.30.1.12:5173", "woc-dev-team.github.io/twcommunity/"],
     methods: ['GET', 'POST'],
 }));
-app.use(express_1.default.json());
+app.use(express.json());
 app.get('/search/blog', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a, _b, _c, _d;
     const query = req.query.query;
@@ -63,12 +26,9 @@ app.get('/search/blog', (req, res) => __awaiter(void 0, void 0, void 0, function
         return;
     }
     const apiUrl = `https://openapi.naver.com/v1/search/blog?query=${encodeURIComponent(query)}&display=100&sort=date`;
-    const formatDate = (date) => {
-        const dateObj = new Date(date);
-        return new Intl.DateTimeFormat('ko-KR').format(dateObj);
-    };
+    const formatDate = (date) => `${date.slice(2, 4)}.${date.slice(4, 6)}.${date.slice(6, 8)}`;
     try {
-        const response = yield axios_1.default.get(apiUrl, {
+        const response = yield axios.get(apiUrl, {
             headers: {
                 'X-Naver-Client-Id': "55gNZJeKLjjxwPSWalkT",
                 'X-Naver-Client-Secret': "QFPPpwL_jB"
@@ -91,7 +51,7 @@ app.get('/search/blog', (req, res) => __awaiter(void 0, void 0, void 0, function
         res.json(reduceData);
     }
     catch (error) {
-        if (error instanceof axios_1.AxiosError) {
+        if (error instanceof AxiosError) {
             const status = (_b = (_a = error.response) === null || _a === void 0 ? void 0 : _a.status) !== null && _b !== void 0 ? _b : 500;
             const data = (_d = (_c = error.response) === null || _c === void 0 ? void 0 : _c.data) !== null && _d !== void 0 ? _d : 'No error data available';
             console.error('Axios Error:', status, data);
@@ -104,7 +64,7 @@ app.get('/search/blog', (req, res) => __awaiter(void 0, void 0, void 0, function
     }
 }));
 const getLocalIP = () => {
-    const interfaces = os_1.default.networkInterfaces();
+    const interfaces = os.networkInterfaces();
     for (const interfaceName in interfaces) {
         for (const iface of interfaces[interfaceName] || []) {
             if (iface.family === 'IPv4' && !iface.internal) {
@@ -114,6 +74,6 @@ const getLocalIP = () => {
     }
     return '127.0.0.1'; // 기본값
 };
-app.listen(3000, () => {
-    console.log(`Server running at ${getLocalIP()}:3000`);
+app.listen(PORT, () => {
+    console.log(`Server running at ${getLocalIP()}:${PORT}`);
 });

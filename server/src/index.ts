@@ -22,10 +22,7 @@ app.get('/search/blog', async (req: Request, res: Response): Promise<void> => {
 
     const apiUrl = `https://openapi.naver.com/v1/search/blog?query=${encodeURIComponent(query)}&display=100&sort=date`;
 
-    const formatDate = (date: string) => {
-        const dateObj = new Date(date);
-        return new Intl.DateTimeFormat('ko-KR').format(dateObj);
-    };    
+    const formatDate = (date: string) => `${date.slice(2, 4)}.${date.slice(4, 6)}.${date.slice(6, 8)}`;
 
     try {
         const response = await axios.get<{ items: Item[] }>(apiUrl, {
