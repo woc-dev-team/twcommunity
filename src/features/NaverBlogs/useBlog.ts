@@ -8,8 +8,7 @@ const useBlog = () => {
   const [active, setActive] = useAtom<number | null>(activeAtom);
   const [data, setData] = useAtom<BlogItem[]>(blogAtom);
 
-  const PROXY = window.location.hostname === 'localhost' ? '' : 'https://twcommunity-server.store';
-  const URL = `${PROXY}/search/blog`;
+  const URL = `https://twcommunity-server.store/search/blog`;
 
   console.log('Request URL:', URL);
 
@@ -19,7 +18,7 @@ const useBlog = () => {
         params: {
           query: '더워드',
         },
-        withCredentials: true
+        withCredentials: false
       });
 
       const datas = response.data;
