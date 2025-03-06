@@ -11,6 +11,8 @@ const useBlog = () => {
   const PROXY = window.location.hostname === 'localhost' ? '' : '/proxy';
   const URL = `${PROXY}/search/blog`;
 
+  console.log('Request URL:', URL);
+
   const searchBlog = async () => {
     try {
       const response = await axios.get(URL, {
