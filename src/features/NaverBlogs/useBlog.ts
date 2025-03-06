@@ -9,7 +9,7 @@ const useBlog = () => {
 
     const searchBlog = async () => {
         try {
-            const response = await fetch(`/search/blog?query=더워드`);
+            const response = await fetch(`http://twc-community-elastic-env.eba-nquntjkk.ap-northeast-2.elasticbeanstalk.com/search/blog?query=더워드`);
             const datas = await response.json();
             setData(datas);
         } catch (error) {
