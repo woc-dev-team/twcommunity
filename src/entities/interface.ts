@@ -5,7 +5,7 @@ interface BlogItem {
     link: string;
     bloggername: string;
     postdate: string;
-}
+} 
 
 // Components Props Interfaces
 interface CustomImageProps {
