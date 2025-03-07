@@ -10,8 +10,6 @@ const useBlog = () => {
 
   const URL = `https://twcommunity-server.store/search/blog`;
 
-  console.log('Request URL:', URL);
-
   const searchBlog = async () => {
     try {
       const response = await axios.get(URL, {
