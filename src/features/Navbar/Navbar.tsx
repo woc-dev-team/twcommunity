@@ -1,4 +1,4 @@
-import LanguagePack from "../Button/LanguagePack";
+import LanguagePack from "../LanguagePack/LanguagePack";
 import NavList from "./NavList";
 import { navListData } from "../../entities/datas";
 import navLogo from "@/assets/images/nav_logo.svg";

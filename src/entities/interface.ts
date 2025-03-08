@@ -20,6 +20,7 @@ interface ModalProps {
     open: boolean;
     handler: () => void;
     children: React.ReactNode;
+    close: string;
 }
 
 interface NavListProps {

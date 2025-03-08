@@ -4,14 +4,17 @@ import NaverMaps from "../../../features/NaverMaps/NaverMaps";
 import useMaps from "../../../features/NaverMaps/useMaps";
 import ChurchImage from "../../../assets/images/twc_front_door.jpeg"
 import CustomImage from "../../../features/Image/CustomImage";
+import { languagePacks } from "../../../entities/datas";
+import useMenus from "../../../features/Navbar/useMenus";
 
 const MainElements = () => {
+    const { languageIndex } = useMenus();
     const { isMapOpen, setIsMapOpen }  = useMaps();
     const handleOpen = () => setIsMapOpen(!isMapOpen);
 
     return (
         <>
-            <Modal title="위치 정보" open={isMapOpen} handler={handleOpen}>
+            <Modal title={languagePacks[languageIndex].modal.title} open={isMapOpen} handler={handleOpen} close={languagePacks[languageIndex].modal.close}>
                 <NaverMaps className="w-full h-full" />
             </Modal>
             

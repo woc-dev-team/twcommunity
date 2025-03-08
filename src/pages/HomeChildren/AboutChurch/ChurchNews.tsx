@@ -1,7 +1,7 @@
 import useBlog from "../../../features/NaverBlogs/useBlog";
 import Blog from "../../../features/NaverBlogs/Blog";
 
-const ChurchNews = () => {
+const ChurchNews = ({title}: {title: string}) => {
     const { active, setActive } = useBlog();
 
     return (
@@ -12,7 +12,7 @@ const ChurchNews = () => {
                 onMouseEnter={() => setActive(1)}
                 onMouseLeave={() => setActive(null)}
             >
-                <p className="text-2xl c_md:text-3xl mb-4 c_md:mb-10 text-black dark:text-white">교회 소식</p>
+                <p className="text-2xl c_md:text-3xl mb-4 c_md:mb-10 text-black dark:text-white">{title}</p>
                 <Blog className="h-96 c_md:h-full w-full mb-14 c_md:mb-0 rounded-lg overflow-hidden overflow-y-auto font-sans" />
             </div>
         </>

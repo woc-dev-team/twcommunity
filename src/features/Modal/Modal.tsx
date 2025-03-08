@@ -1,6 +1,6 @@
 import { ModalProps } from "../../entities/interface";
  
-const Modal = ({title, open, handler, children}: ModalProps) => {    
+const Modal = ({title, open, handler, children, close}: ModalProps) => {    
     return (
         <>
             {open && <div className="fixed inset-0 backdrop-blur-sm bg-black bg-opacity-50 z-40" onClick={handler}></div>}
@@ -10,7 +10,7 @@ const Modal = ({title, open, handler, children}: ModalProps) => {
                     <div className="h-full w-full row-span-4">{children}</div>
                     <footer className="h-full w-full row-span-1 text-center">
                         <button onClick={handler} className="text-md c_md:text-xl text-black dark:text-white font-semibold mt-9 transition-all duration-500 ease-in-out hover:scale-110 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-950">
-                            닫기
+                            {close}
                         </button>
                     </footer>
                 </div>
