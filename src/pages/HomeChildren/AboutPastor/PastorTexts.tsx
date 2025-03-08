@@ -8,8 +8,7 @@ const PastorTexts = ({profileImg}: PastorTextsProps) => {
 
     return (
         <>
-            <p className="dark:text-white text-3xl c_sm:text-5xl c_md:text-6xl font-bold">Pastor</p>
-            <p className="dark:text-white text-md c_sm:text-lg c_md:text-2xl mt-1 font-sans">담임 목사 소개</p>
+            <p className="dark:text-white text-3xl c_sm:text-5xl c_md:text-6xl font-bold">{languagePacks[languageIndex].pastorTexts.Title}</p>
             <div className="relative c_md:hidden mt-10 mb-10 flex justify-center">
                 <CustomImage className="w-2/6 max-w-xs md:max-w-sm lg:max-w-md h-auto object-cover" alt={"목사님 프로필 이미지"} src={profileImg} gradation="b"/>
             </div>

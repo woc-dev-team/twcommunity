@@ -33,7 +33,8 @@ export const languagePacks = [
             Location: "찾아오시는 길"
         },
         visionTexts: {
-            twc: "The Word Church",
+            Title: "더워드교회의 비전",
+            twc: "더워드교회",
             p1: "는 에베소서 2장 20절 말씀대로 사도들과 선지자들의 터 위에 세운 교회입니다.",
             p2: {
                 pStart: " (합동)는 ",
@@ -50,6 +51,7 @@ export const languagePacks = [
             p6: "함께 비전을 가지고 예배하길 소망합니다."
         },
         pastorTexts: {
+            Title: "담임 목사 소개",
             Name: "박성은 목사",
             p1: "The Word Church 담임 목사",
             p2: "_Of Church 사역팀 대표 목사",
@@ -58,6 +60,7 @@ export const languagePacks = [
             p5: "총신대학교 일반대학원 조직신학 (Ph.D.Cand.)"
         },
         aboutChurch: {
+            Title: "교회 안내",
             directions: "오시는 길",
             news: "교회 소식",
             counsel: "양육 신청 문의 및 상담 신청"
@@ -78,6 +81,7 @@ export const languagePacks = [
             Location: "Directions"
         },
         visionTexts: {
+            Title: "The Word Church's Vision",
             twc: "The Word Church",
             p1: " is built on the foundation of the apostles and prophets, according to Ephesians 2:20.",
             p2: {
@@ -95,6 +99,7 @@ export const languagePacks = [
             p6: "We hope to worship together in this vision."
         },
         pastorTexts: {
+            Title: "Pastor's Introduction",
             Name: "Pastor Park Seong Eun",
             p1: "Pastor of The Word Church",
             p2: "Pastor of _Of Church Ministry Team",
@@ -103,6 +108,7 @@ export const languagePacks = [
             p5: "Chongshin University Graduate School, Systematic Theology (Ph.D. Candidate)"
         },
         aboutChurch: {
+            Title: "Church Information",
             directions: "Directions",
             news: "Church News",
             counsel: "Counsel"

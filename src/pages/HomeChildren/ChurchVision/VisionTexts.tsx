@@ -6,8 +6,8 @@ const VisionTexts = () => {
 
     return (
         <div className="w-full c_image:col-span-6 z-30">
-            <p className="dark:text-white -ms-1 text-xl c_sm:text-2xl c_md:text-5xl font-bold">{languagePacks[languageIndex].visionTexts.twc}'s Vision</p>
-            <p className="dark:text-white text-sm c_sm:text-md c_md:text-xl mt-1 font-sans">더워드교회의 비전</p>
+            <p className="dark:text-white -ms-1 text-xl c_sm:text-2xl c_md:text-5xl font-bold">{languagePacks[languageIndex].visionTexts.Title}</p>
+            {/* <p className="dark:text-white text-sm c_sm:text-md c_md:text-xl mt-1 font-sans">더워드교회의 비전</p> */}
             <p className="dark:text-white text-sm c_sm:text-md c_md:text-lg mt-7 font-thin"><span className="font-normal">{languagePacks[languageIndex].visionTexts.twc}</span>{languagePacks[languageIndex].visionTexts.p1}</p>
             <p className="dark:text-white text-sm c_sm:text-md c_md:text-lg mt-3 font-thin"><span className="font-normal">{languagePacks[languageIndex].visionTexts.twc}</span>
                 {languagePacks[languageIndex].visionTexts.p2.pStart}

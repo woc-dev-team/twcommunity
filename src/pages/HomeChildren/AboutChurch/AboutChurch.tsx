@@ -10,11 +10,11 @@ const AboutChurch = () => {
     return (
         <>
             <div id="info" className="h-full w-full p-16 text-6xl text-center transition-all duration-500 ease-in-out">
-            <p className="text-3xl c_md:text-5xl dark:text-white font-bold">Church Information</p>
-            <p className="text-2xl c_md:text-4xl font-thin dark:text-white mb-10">교회 안내</p>
+            <p className="text-4xl c_md:text-6xl dark:text-white font-bold mb-16">{languagePacks[languageIndex].aboutChurch.Title}</p>
+            {/* <p className="text-2xl c_md:text-4xl font-thin dark:text-white mb-10">교회 안내</p> */}
 
             {/* 여기서 세 파트 */}
-            <div className="flex flex-col md:flex-row h-full w-full gap-5 mb-20 font-bold">
+            <div className="flex flex-col md:flex-row h-full w-full gap-5 mb-20 font-semibold">
                 <Directions title={languagePacks[languageIndex].aboutChurch.directions} />
                 <ChurchNews title={languagePacks[languageIndex].aboutChurch.news} />
                 <Counsel title={languagePacks[languageIndex].aboutChurch.counsel} />
