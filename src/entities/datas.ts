@@ -63,7 +63,7 @@ export const languagePacks = [
             Title: "교회 안내",
             directions: "오시는 길",
             news: "교회 소식",
-            counsel: "양육 신청 문의 및 상담 신청"
+            counsel: "양육 신청 & 상담 신청"
         },
         modal: {
             title: "위치 정보",
