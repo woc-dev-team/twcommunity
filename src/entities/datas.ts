@@ -85,7 +85,7 @@ export const languagePacks = [
             twc: "The Word Church",
             p1: " is built on the foundation of the apostles and prophets, according to Ephesians 2:20.",
             p2: {
-                pStart: "(Hapdong) is ",
+                pStart: "(Presbyterian) is ",
                 pSpan: " a church established upon the Word.",
                 pEnd: "",
                 pDescription: "Above all, the Word is central, and the Word is the heartbeat of the church. To emphasize the Word and reflect its uniqueness, we have chosen this name."
