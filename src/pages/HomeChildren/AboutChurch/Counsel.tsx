@@ -1,11 +1,11 @@
 import useBlog from "../../../features/NaverBlogs/useBlog";
 import QRCode from "../../../assets/images/qr_code.jpeg";
-import { languagePacks } from "../../../entities/datas";
-import useMenus from "../../../features/Navbar/useMenus";
+// import { languagePacks } from "../../../entities/datas";
+// import useMenus from "../../../features/Navbar/useMenus";
 
 const Counsel = ({title}: {title: string}) => {
-    const { active, setActive } = useBlog();
-    const { languageIndex } = useMenus();
+    const { active } = useBlog();
+    // const { languageIndex } = useMenus();
 
     return (
         <>
