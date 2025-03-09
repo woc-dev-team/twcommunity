@@ -11,7 +11,7 @@ const Directions = ({title}: {title: string}) => {
                 onMouseEnter={() => setActive(0)}
                 onMouseLeave={() => setActive(null)}
             >
-                <p className="text-2xl c_md:text-3xl mb-4 c_md:mb-10 text-black dark:text-white">{title}</p>
+                <p className="text-2xl c_md:text-3xl mb-4 c_md:mb-10 text-black dark:text-white font-semibold">{title}</p>
                 <NaverMaps className="h-96 c_md:h-screen w-full pb-14 c_md:pb-0 rounded-lg overflow-hidden" />
             </div>
         </>

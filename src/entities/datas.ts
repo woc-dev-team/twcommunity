@@ -24,16 +24,16 @@ export const navListData = [
 export const languagePacks = [
     {
         language: {
-            Title: "한국어 (KR)", 
-            Sub: "KR",
+            title: "한국어 (KR)", 
+            sub: "KR",
         },
         mainTexts: {
-            Title: "더워드교회",
-            Word: "에베소서 2장 20절",
-            Location: "찾아오시는 길"
+            title: "더워드교회",
+            word: "에베소서 2장 20절",
+            location: "찾아오시는 길"
         },
         visionTexts: {
-            Title: "더워드교회의 비전",
+            title: "더워드교회의 비전",
             twc: "더워드교회",
             p1: "는 에베소서 2장 20절 말씀대로 사도들과 선지자들의 터 위에 세운 교회입니다.",
             p2: {
@@ -51,8 +51,8 @@ export const languagePacks = [
             p6: "함께 비전을 가지고 예배하길 소망합니다."
         },
         pastorTexts: {
-            Title: "담임 목사 소개",
-            Name: "박성은 목사",
+            title: "담임 목사 소개",
+            name: "박성은 목사",
             p1: "The Word Church 담임 목사",
             p2: "_Of Church 사역팀 대표 목사",
             p3: "총신대학교 신학대학원 (M.Div.eq)",
@@ -60,10 +60,20 @@ export const languagePacks = [
             p5: "총신대학교 일반대학원 조직신학 (Ph.D.Cand.)"
         },
         aboutChurch: {
-            Title: "교회 안내",
+            title: "교회 안내",
             directions: "오시는 길",
             news: "교회 소식",
-            counsel: "양육 신청 & 상담 신청"
+            counsel: { 
+                title: "양육 신청 및 상담 신청",
+                nurture: {
+                    title: "< 양육 신청",
+                    desciption: "추구하는 방향은 그리스도가 중심인 교회, 차별이 없는 교회, 하나님을 위한 교회, 말씀 위에 세운 교회, 아는 것과 믿는 것이 일치되는 교회, 선포하고 가르치는 교회, 사랑 안에서 참된 것을 말하는 교회, 말씀 안에서 예배하는 교회, 각자의 분량대로 섬기는 교회입니다."
+                },
+                counseling: {
+                    title: "< 신앙상담 신청",
+                    desciption: "추구하는 방향은 그리스도가 중심인 교회, 차별이 없는 교회, 하나님을 위한 교회, 말씀 위에 세운 교회, 아는 것과 믿는 것이 일치되는 교회, 선포하고 가르치는 교회, 사랑 안에서 참된 것을 말하는 교회, 말씀 안에서 예배하는 교회, 각자의 분량대로 섬기는 교회입니다."
+                }
+            }
         },
         modal: {
             title: "위치 정보",
@@ -72,16 +82,16 @@ export const languagePacks = [
     },
     {
         language: {
-            Title: "English (US)", 
-            Sub: "US",
+            title: "English (US)", 
+            sub: "US",
         },
         mainTexts: {
-            Title: "The Word Church",
-            Word: "Ephesians 2:20",
-            Location: "Directions"
+            title: "The Word Church",
+            word: "Ephesians 2:20",
+            location: "Directions"
         },
         visionTexts: {
-            Title: "The Word Church's Vision",
+            title: "The Word Church's Vision",
             twc: "The Word Church",
             p1: " is built on the foundation of the apostles and prophets, according to Ephesians 2:20.",
             p2: {
@@ -99,7 +109,7 @@ export const languagePacks = [
             p6: "We hope to worship together in this vision."
         },
         pastorTexts: {
-            Title: "Pastor's Introduction",
+            title: "Pastor's Introduction",
             Name: "Pastor Park Seong Eun",
             p1: "Pastor of The Word Church",
             p2: "Pastor of _Of Church Ministry Team",
@@ -108,10 +118,20 @@ export const languagePacks = [
             p5: "Chongshin University Graduate School, Systematic Theology (Ph.D. Candidate)"
         },
         aboutChurch: {
-            Title: "Church Information",
+            title: "Church Information",
             directions: "Directions",
             news: "Church News",
-            counsel: "Counsel"
+            counsel: { 
+                title: "Spiritual Nurture & Counseling",
+                nurture: {
+                    title: "< Spiritual Nurture",
+                    desciption: "pursues the direction of being a Christ-centered church, a church without partiality, a church for God, a church built upon the Word, a church where knowing and believing are in unity, a church that proclaims and teaches, a church that speaks the truth in love, a church that worships in the Word, and a church where each serves according to their measure."
+                },
+                counseling: {
+                    title: "< Spiritual Counseling",
+                    desciption: "pursues the direction of being a Christ-centered church, a church without partiality, a church for God, a church built upon the Word, a church where knowing and believing are in unity, a church that proclaims and teaches, a church that speaks the truth in love, a church that worships in the Word, and a church where each serves according to their measure."
+                },
+            }
         },
         modal: {
             title: "Location Information",

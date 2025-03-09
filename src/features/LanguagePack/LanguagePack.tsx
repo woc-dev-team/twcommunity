@@ -33,8 +33,8 @@ const LanguagePack = () => {
                 className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white"
             >
                 <GlobeAltIcon className="size-6 mr-1" />
-                <p className="hidden c_md:block">{languagePacks[languageIndex].language?.Title}</p>
-                <p className="block c_md:hidden">{languagePacks[languageIndex].language?.Sub}</p>
+                <p className="hidden c_md:block">{languagePacks[languageIndex].language?.title}</p>
+                <p className="block c_md:hidden">{languagePacks[languageIndex].language?.sub}</p>
                 {languageIndex === 0 ? 
                     <img src={KoreaIcon} alt="South Korea" className="h-4 w-4 rounded-full me-2.5 ms-2 self-center" /> :
                     <img src="https://flagcdn.com/w40/us.png" alt="United States" className="h-4 w-4 rounded-full me-2.5 ms-2 self-center" />
@@ -55,7 +55,7 @@ const LanguagePack = () => {
                                 onClick={() => clickLanguage("kr")}
                             >
                                 <img src={KoreaIcon} alt="South Korea" className="h-4 w-4 rounded-full me-2.5 self-center" />
-                                {languagePacks[0].language?.Title}
+                                {languagePacks[0].language?.title}
                             </button>
                         </li>
                         <li>
@@ -64,7 +64,7 @@ const LanguagePack = () => {
                                 onClick={() => clickLanguage("us")}
                             >
                                 <img src="https://flagcdn.com/w40/us.png" alt="United States" className="h-4 w-4 rounded-full me-2.5 self-center" />
-                                {languagePacks[1].language?.Title}
+                                {languagePacks[1].language?.title}
                             </button>
                         </li>
                     </ul>
