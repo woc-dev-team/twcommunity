@@ -38,7 +38,6 @@ interface PastorTextsProps {
 }
 
 interface BlogListProps {
-    index: number;
     item: BlogItem;
 }
 

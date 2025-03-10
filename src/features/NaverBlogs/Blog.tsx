@@ -14,7 +14,7 @@ const Blog = ({className}: NaverMapsProps) => {
     <>
       <ul className={className}>
         {data ? (
-          data.map((item, index) => <BlogList index={index} item={item} />)
+          data.map((item, index) => <BlogList key={index} item={item} />)
         ) : (
           <li className="text-black dark:text-white text-2xl">교회 소식 불러오는 중...</li>
         )}

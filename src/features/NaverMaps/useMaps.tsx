@@ -14,8 +14,8 @@ const loadScript = (src: string, callback: () => void) => {
 };
 
 const useMaps = () => {
-    const [isMapLoaded, setMapLoaded] = useAtom<boolean>(mapsLoadedAtom);
-    const [isMapOpen, setIsMapOpen] = useAtom<boolean>(mapsOpenAtom);
+    const [isMapLoaded, setMapLoaded] = useAtom(mapsLoadedAtom);
+    const [isMapOpen, setIsMapOpen] = useAtom(mapsOpenAtom);
     
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const initMap = () => {

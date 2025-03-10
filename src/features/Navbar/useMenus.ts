@@ -27,6 +27,14 @@ const useMenus = () => {
         setLanguageIndex(value === "kr" ? 0 : 1);
     }
 
+    const startPopUp = (title: string, url: string) => {
+        if (confirm(`${title}로 이동하시겠습니까?`)) {
+            window.open(url, title);
+        } else {
+            alert("취소 되었습니다\n다시 시도해주세요!");
+        }
+    }
+
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 15);
 
@@ -46,7 +54,8 @@ const useMenus = () => {
 
         dropdownRef,
         moveScrollTo,
-        clickLanguage
+        clickLanguage,
+        startPopUp
     }
 }
 

@@ -66,11 +66,11 @@ export const languagePacks = [
             counsel: { 
                 title: "양육 신청 및 상담 신청",
                 nurture: {
-                    title: "< 양육 신청",
+                    title: "양육 신청",
                     desciption: "추구하는 방향은 그리스도가 중심인 교회, 차별이 없는 교회, 하나님을 위한 교회, 말씀 위에 세운 교회, 아는 것과 믿는 것이 일치되는 교회, 선포하고 가르치는 교회, 사랑 안에서 참된 것을 말하는 교회, 말씀 안에서 예배하는 교회, 각자의 분량대로 섬기는 교회입니다."
                 },
                 counseling: {
-                    title: "< 신앙상담 신청",
+                    title: "신앙상담 신청",
                     desciption: "추구하는 방향은 그리스도가 중심인 교회, 차별이 없는 교회, 하나님을 위한 교회, 말씀 위에 세운 교회, 아는 것과 믿는 것이 일치되는 교회, 선포하고 가르치는 교회, 사랑 안에서 참된 것을 말하는 교회, 말씀 안에서 예배하는 교회, 각자의 분량대로 섬기는 교회입니다."
                 }
             }
@@ -124,11 +124,11 @@ export const languagePacks = [
             counsel: { 
                 title: "Spiritual Nurture & Counseling",
                 nurture: {
-                    title: "< Spiritual Nurture",
+                    title: "Spiritual Nurture",
                     desciption: "pursues the direction of being a Christ-centered church, a church without partiality, a church for God, a church built upon the Word, a church where knowing and believing are in unity, a church that proclaims and teaches, a church that speaks the truth in love, a church that worships in the Word, and a church where each serves according to their measure."
                 },
                 counseling: {
-                    title: "< Spiritual Counseling",
+                    title: "Spiritual Counseling",
                     desciption: "pursues the direction of being a Christ-centered church, a church without partiality, a church for God, a church built upon the Word, a church where knowing and believing are in unity, a church that proclaims and teaches, a church that speaks the truth in love, a church that worships in the Word, and a church where each serves according to their measure."
                 },
             }

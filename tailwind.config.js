@@ -22,5 +22,26 @@ export default {
     },
   },
   darkMode: 'class',
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide'),
+    function ({ addComponents }) {
+      addComponents({
+        '.scrollbar-custom': {
+          '&::-webkit-scrollbar': {
+            width: '8px',
+          },
+          '&::-webkit-scrollbar-track': {
+            backgroundColor: '#f1f1f1',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            backgroundColor: '#888',
+            borderRadius: '10px',
+          },
+          '&::-webkit-scrollbar-thumb:hover': {
+            backgroundColor: '#555',
+          },
+        }
+      })
+    }
+  ],
 }
