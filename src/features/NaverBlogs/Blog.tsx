@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import BlogList from "./BlogList";
 import useBlog from "./useBlog";
 import { NaverMapsProps } from "../../entities/interface";
@@ -6,9 +6,13 @@ import { NaverMapsProps } from "../../entities/interface";
 const Blog = ({className}: NaverMapsProps) => {
   const { data, searchBlog } = useBlog();
 
-  useEffect(() => {
+  const searchCallback = useCallback(() => {
     searchBlog();
   }, [])
+
+  useEffect(() => {
+    searchCallback();
+  }, [searchCallback]);
 
   return (
     <>

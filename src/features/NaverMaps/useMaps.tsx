@@ -27,6 +27,7 @@ const useMaps = () => {
             },
             center: new naver.maps.LatLng(mapData.latitude, mapData.longitude),
             zoom: 18,
+            mapTypeId: naver.maps.MapTypeId.NORMAL
         };
 
         // 지도 초기화 확인
