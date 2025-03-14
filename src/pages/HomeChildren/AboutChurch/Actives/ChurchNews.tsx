@@ -1,5 +1,5 @@
-import useBlog from "../../../features/NaverBlogs/useBlog";
-import Blog from "../../../features/NaverBlogs/Blog";
+import useBlog from "../../../../features/NaverBlogs/useBlog";
+import Blog from "../../../../features/NaverBlogs/Blog";
 
 const ChurchNews = ({title}: {title: string}) => {
     const { active, setActive } = useBlog();

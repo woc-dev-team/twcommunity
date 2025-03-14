@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { mapsOpenAtom, mapsLoadedAtom } from "../../entities/jotai";
 import useMenus from "../Navbar/useMenus";
 import { languagePacks } from "../../entities/datas";
+import useBlog from "../NaverBlogs/useBlog";
 
 let mapInstance: naver.maps.Map | null = null;
 
@@ -19,6 +20,7 @@ const useMaps = () => {
     const [isMapLoaded, setMapLoaded] = useAtom(mapsLoadedAtom);
     const [isMapOpen, setIsMapOpen] = useAtom(mapsOpenAtom);
     const { languageIndex } = useMenus();
+    const { setActive } = useBlog();
     
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const initMap = () => {
@@ -58,6 +60,13 @@ const useMaps = () => {
         setMapLoaded(true);
     };
 
+    const setActiveMaps = () => {
+        setActive(0);
+        setTimeout(() => {
+            initMap();
+        }, 300)
+    }
+
     useEffect(() => {
         // 스크립트 로딩 확인
         if (typeof naver === "undefined") {
@@ -71,9 +80,13 @@ const useMaps = () => {
     }, [initMap]);
     
     return { 
+        initMap,
+        loadScript,
         isMapLoaded,
+        setIsMapOpen,
         isMapOpen,
-        setIsMapOpen
+        setMapLoaded,
+        setActiveMaps
     };
 }
 

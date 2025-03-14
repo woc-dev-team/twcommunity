@@ -42,7 +42,6 @@ html {
     transform: scale(1.5) translateX(30px) translateY(20px);   /* 이미지 확대 */
 } 
 
-// 글씨 자동 추가
 @layer utilities {
     .text-responsive {
       font-size: clamp(1rem, 2.5vw, 2rem); /* 최소 1rem, 최대 2rem */

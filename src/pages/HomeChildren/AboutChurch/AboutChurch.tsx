@@ -1,6 +1,6 @@
-import ChurchNews from "./ChurchNews";
-import Counsel from "./Counsel";
-import Directions from "./Directions";
+import ChurchNews from "./Actives/ChurchNews";
+import Counsel from "./Actives/Counsel";
+import Directions from "./Actives/Directions";
 import { languagePacks } from "../../../entities/datas";
 import useMenus from "../../../features/Navbar/useMenus";
 
