@@ -2,6 +2,8 @@ import { useAtom } from "jotai";
 import { mapData } from "../../entities/datas";
 import { useEffect } from "react";
 import { mapsOpenAtom, mapsLoadedAtom } from "../../entities/jotai";
+import useMenus from "../Navbar/useMenus";
+import { languagePacks } from "../../entities/datas";
 
 let mapInstance: naver.maps.Map | null = null;
 
@@ -16,6 +18,7 @@ const loadScript = (src: string, callback: () => void) => {
 const useMaps = () => {
     const [isMapLoaded, setMapLoaded] = useAtom(mapsLoadedAtom);
     const [isMapOpen, setIsMapOpen] = useAtom(mapsOpenAtom);
+    const { languageIndex } = useMenus();
     
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const initMap = () => {
@@ -43,7 +46,7 @@ const useMaps = () => {
     
         // Marker 클릭 시 지도 초기화
         naver.maps.Event.addListener(marker, 'click', () => {
-            if (confirm("네이버 지도로 이동하시겠습니까?")) {
+            if (confirm(`${languagePacks[languageIndex].modal.maps}${languagePacks[languageIndex].modal.confirm}`)) {
                 window.open(`https://map.naver.com/p/entry/place/1886682973?c=15.00,0,0,0,dh`, 'woc_naver_map');
             } else {
                 mapInstance?.setCenter(new naver.maps.LatLng(mapData.latitude, mapData.longitude));

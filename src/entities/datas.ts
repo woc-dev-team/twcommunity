@@ -67,17 +67,19 @@ export const languagePacks = [
                 title: "양육 신청 및 상담 신청",
                 nurture: {
                     title: "양육 신청",
-                    desciption: "추구하는 방향은 그리스도가 중심인 교회, 차별이 없는 교회, 하나님을 위한 교회, 말씀 위에 세운 교회, 아는 것과 믿는 것이 일치되는 교회, 선포하고 가르치는 교회, 사랑 안에서 참된 것을 말하는 교회, 말씀 안에서 예배하는 교회, 각자의 분량대로 섬기는 교회입니다."
+                    desciption: "신앙 생활에 꼭 필요한 기본 개념부터 배움을 통해 그리스도의 장성한 분량까지 자라가는 목적을 가지고 있습니다. 바른 신앙과 바른 교리 위에 여러분의 신앙을 세워갑시다."
                 },
                 counseling: {
                     title: "신앙상담 신청",
-                    desciption: "추구하는 방향은 그리스도가 중심인 교회, 차별이 없는 교회, 하나님을 위한 교회, 말씀 위에 세운 교회, 아는 것과 믿는 것이 일치되는 교회, 선포하고 가르치는 교회, 사랑 안에서 참된 것을 말하는 교회, 말씀 안에서 예배하는 교회, 각자의 분량대로 섬기는 교회입니다."
+                    desciption: "신앙 생활은 혼자하는 것이 불가능합니다. 반드시 동역자 또는 목사에게 상담을 받고 함께 동역해야 합니다. 여러분의 신앙적 고민을 나눌 때 하나님께서 역사하십니다."
                 }
             }
         },
         modal: {
             title: "위치 정보",
-            close: "닫기"
+            close: "닫기",
+            confirm: "로 이동하시겠습니까?",
+            maps: "네이버 지도"
         }
     },
     {
@@ -125,17 +127,19 @@ export const languagePacks = [
                 title: "Spiritual Nurture & Counseling",
                 nurture: {
                     title: "Spiritual Nurture",
-                    desciption: "pursues the direction of being a Christ-centered church, a church without partiality, a church for God, a church built upon the Word, a church where knowing and believing are in unity, a church that proclaims and teaches, a church that speaks the truth in love, a church that worships in the Word, and a church where each serves according to their measure."
+                    desciption: "Let us build our faith on sound doctrine and right belief, with the goal of growing to the full measure of Christ through learning, starting with the essential concepts necessary for the Christian life."
                 },
                 counseling: {
                     title: "Spiritual Counseling",
-                    desciption: "pursues the direction of being a Christ-centered church, a church without partiality, a church for God, a church built upon the Word, a church where knowing and believing are in unity, a church that proclaims and teaches, a church that speaks the truth in love, a church that worships in the Word, and a church where each serves according to their measure."
+                    desciption: "The Christian life cannot be lived alone. It is essential to seek counsel from a pastor or fellow believers and walk together in faith. When you share your spiritual concerns, God works in your life."
                 },
             }
         },
         modal: {
             title: "Location Information",
-            close: "Close"
+            close: "Close",
+            confirm: ", would you like to move?",
+            maps: "Maps"
         }
     }
 ];

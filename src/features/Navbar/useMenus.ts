@@ -1,6 +1,7 @@
 import { useAtom } from "jotai";
 import { menuToggleAtom, scrollAtom, dropdownAtom, languageAtom } from "../../entities/jotai";
 import { useEffect, useRef } from "react";
+import { languagePacks } from "../../entities/datas";
 
 const useMenus = () => {
     const [isMenuOn, setIsMenuOn] = useAtom<boolean>(menuToggleAtom);
@@ -22,16 +23,13 @@ const useMenus = () => {
     const clickLanguage = (value: string | null) => {
         if (value === null || value === "") return;
         
-        // console.log(`${value}`)
         setIsDroped(false);
         setLanguageIndex(value === "kr" ? 0 : 1);
     }
 
     const startPopUp = (title: string, url: string) => {
-        if (confirm(`${title}로 이동하시겠습니까?`)) {
+        if (confirm(title+languagePacks[languageIndex].modal.confirm)) {
             window.open(url, title);
-        } else {
-            alert("취소 되었습니다\n다시 시도해주세요!");
         }
     }
 
