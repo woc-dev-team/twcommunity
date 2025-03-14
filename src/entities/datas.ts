@@ -1,28 +1,23 @@
-export const navListData = [
-    {
-        text: "Home", 
-        link: "#/home",
-        heights: 0
-    },
-    {
-        text: "Vision",
-        link: "#/vision",
-        heights: 0
-    },
-    {
-        text: "Pastor", 
-        link: "#/pastor",
-        heights: 0
-    },
-    {
-        text: "Information", 
-        link: "#/info",
-        heights: 0
-    }
-];
-
 export const languagePacks = [
     {
+        menu: [
+            {
+                text: "홈", 
+                link: "#/home"
+            },
+            {
+                text: "교회 비전",
+                link: "#/vision"
+            },
+            {
+                text: "담임 목사", 
+                link: "#/pastor"
+            },
+            {
+                text: "교회 안내", 
+                link: "#/info"
+            }
+        ],
         language: {
             title: "한국어 (KR)", 
             sub: "KR",
@@ -64,7 +59,7 @@ export const languagePacks = [
             directions: "오시는 길",
             news: "교회 소식",
             counsel: { 
-                title: "양육 신청 및 상담 신청",
+                title: "양육 신청 및 신앙상담 신청",
                 nurture: {
                     title: "양육 신청",
                     desciption: "신앙 생활에 꼭 필요한 기본 개념부터 배움을 통해 그리스도의 장성한 분량까지 자라가는 목적을 가지고 있습니다. 바른 신앙과 바른 교리 위에 여러분의 신앙을 세워갑시다."
@@ -83,6 +78,24 @@ export const languagePacks = [
         }
     },
     {
+        menu: [
+            {
+                text: "Home", 
+                link: "#/home"
+            },
+            {
+                text: "Vision",
+                link: "#/vision"
+            },
+            {
+                text: "Pastor", 
+                link: "#/pastor"
+            },
+            {
+                text: "Information", 
+                link: "#/info"
+            }
+        ],
         language: {
             title: "English (US)", 
             sub: "US",

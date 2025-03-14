@@ -26,7 +26,6 @@ interface ModalProps {
 interface NavListProps {
     menuText: string;
     menuLink: string;
-    menuLocation: number;
 }
 
 interface NaverMapsProps {

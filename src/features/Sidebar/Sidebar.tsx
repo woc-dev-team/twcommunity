@@ -1,10 +1,11 @@
-import { navListData } from "../../entities/datas";
+import { languagePacks } from "../../entities/datas";
 import useMenus from "../Navbar/useMenus";
 import NavList from "../Navbar/NavList";
 import { X } from "lucide-react";
 
 const Sidebar = () => {
-    const { isMenuOn, setIsMenuOn } = useMenus();
+    const { isMenuOn, setIsMenuOn, languageIndex } = useMenus();
+    const menus = languagePacks[languageIndex].menu;
 
     return (
         <>
@@ -20,12 +21,11 @@ const Sidebar = () => {
                 </button>
 
                 <ul className="mt-10 space-y-4 p-5">
-                    {navListData.map((menuList, index) => (
+                    {menus.map((menuList, index) => (
                         <NavList
                             key={index}
                             menuText={menuList.text}
                             menuLink={menuList.link}
-                            menuLocation={menuList.heights}
                         />
                     ))}
                 </ul>
