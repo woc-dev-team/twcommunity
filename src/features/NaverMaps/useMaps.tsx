@@ -20,7 +20,7 @@ const useMaps = () => {
     const [isMapLoaded, setMapLoaded] = useAtom(mapsLoadedAtom);
     const [isMapOpen, setIsMapOpen] = useAtom(mapsOpenAtom);
     const { languageIndex } = useMenus();
-    const { setActive } = useBlog();
+    const { setActive, active } = useBlog();
     
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const initMap = () => {
@@ -60,24 +60,23 @@ const useMaps = () => {
         setMapLoaded(true);
     };
 
-    const setActiveMaps = () => {
-        setActive(0);
-        setTimeout(() => {
-            initMap();
-        }, 300)
+    const setActiveMaps = (index: number | null) => {
+        setActive(index);
     }
 
     useEffect(() => {
         // 스크립트 로딩 확인
-        if (typeof naver === "undefined") {
-          loadScript(
-            "https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=7o1ui3zo6f",
-            initMap
-          );
-        } else {
-          initMap();
-        }
-    }, [initMap]);
+        setTimeout(() => {
+            if (typeof naver === "undefined") {
+                loadScript(
+                  "https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=7o1ui3zo6f",
+                  initMap
+                );
+            } else {
+                initMap();
+            }
+        }, active === 10 ? 0 : 300);
+    }, [active, initMap]);
     
     return { 
         initMap,
