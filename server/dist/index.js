@@ -14,12 +14,12 @@ import os from 'os';
 const app = express();
 const PORT = 8080;
 app.use(cors({
-    origin: "*",
+    origin: "https://woc-dev-team.github.io/",
     credentials: true,
     methods: ['GET', 'POST'],
     optionsSuccessStatus: 200
 }));
-app.options("*", cors());
+app.options("https://woc-dev-team.github.io/", cors());
 app.use(express.json());
 app.get('/search/blog', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a, _b, _c, _d;
@@ -38,7 +38,7 @@ app.get('/search/blog', (req, res) => __awaiter(void 0, void 0, void 0, function
             }
         });
         const reduceData = response.data.items.reduce((acc, item) => {
-            if (acc.length >= 10)
+            if (acc.length >= 20)
                 return acc;
             if (item.link.includes("thewordchurch__")) {
                 acc.push({
@@ -71,12 +71,12 @@ const getLocalIP = () => {
     for (const interfaceName in interfaces) {
         for (const iface of interfaces[interfaceName] || []) {
             if (iface.family === 'IPv4' && !iface.internal) {
-                return iface.address; // 내부 IP 주소 반환
+                return iface.address;
             }
         }
     }
-    return '127.0.0.1'; // 기본값
+    return '127.0.0.1';
 };
 app.listen(PORT, () => {
-    console.log(`Server running at ${getLocalIP()}:${PORT}`);
+    console.log(`Server running at ${getLocalIP()}:${PORT}\nBelong to https://woc-dev-team.github.io/`);
 });
