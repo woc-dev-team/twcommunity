@@ -8,13 +8,13 @@ const app = express();
 const PORT = 8080;
 
 app.use(cors({
-    origin: "https://woc-dev-team.github.io/",
+    origin: ["https://woc-dev-team.github.io", "http://localhost:5173"],
     credentials: true,
     methods: ['GET', 'POST'],
     optionsSuccessStatus: 200
 }));
 
-app.options("https://woc-dev-team.github.io/", cors());
+app.options(["https://woc-dev-team.github.io", "http://localhost:5173"], cors());
 
 app.use(express.json());
 
