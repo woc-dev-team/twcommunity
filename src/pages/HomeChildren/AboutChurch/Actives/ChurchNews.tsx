@@ -13,7 +13,7 @@ const ChurchNews = ({title}: {title: string}) => {
                 onMouseLeave={() => setActive(null)}
             >
                 <p className="text-2xl c_md:text-3xl mb-4 c_md:mb-10 text-black dark:text-white font-semibold">{title}</p>
-                <Blog className={`h-96 c_md:h-screen w-full mb-14 c_md:mb-0 rounded-lg overflow-hidden overflow-y-auto c_md:scrollbar-hide ${active === 1 ? "text-xs c_md:text-lg" : "text-xs c_md:text-sm"}`} />
+                <Blog className={`h-96 c_md:h-screen w-full mb-14 c_md:mb-0 rounded-lg overflow-hidden overflow-y-auto c_md:scrollbar-hide ${active === 1 ? "text-ms c_md:text-lg" : "text-sm c_md:text-base"}`} />
             </div>
         </>
     )

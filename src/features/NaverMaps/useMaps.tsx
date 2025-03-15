@@ -60,12 +60,12 @@ const useMaps = () => {
         setMapLoaded(true);
     };
 
-    const setActiveMaps = (index: number | null) => {
-        setActive(index);
-    }
+    const setActiveMaps = (index: number | null) => setActive(index);
 
     useEffect(() => {
         // 스크립트 로딩 확인
+        const setTime = active === null ? 0 : 200;
+
         setTimeout(() => {
             if (typeof naver === "undefined") {
                 loadScript(
@@ -75,7 +75,7 @@ const useMaps = () => {
             } else {
                 initMap();
             }
-        }, active === 10 ? 0 : 300);
+        }, setTime);
     }, [active, initMap]);
     
     return { 

@@ -9,7 +9,7 @@ const AboutChurch = () => {
 
     return (
         <>
-            <div id="info" className="h-auto w-full p-5 text-6xl text-center transition-all duration-500 ease-in-out">
+            <div id="info" className="pt-16 h-auto w-full p-5 text-6xl text-center transition-all duration-500 ease-in-out">
                 <p className="text-4xl c_md:text-6xl dark:text-white font-bold mb-16">{languagePacks[languageIndex].aboutChurch.title}</p>
                 {/* <p className="text-2xl c_md:text-4xl font-thin dark:text-white mb-10">교회 안내</p> */}
 

@@ -10,11 +10,10 @@ import useMenus from "../../../features/Navbar/useMenus";
 const MainElements = () => {
     const { languageIndex } = useMenus();
     const { isMapOpen, setIsMapOpen }  = useMaps();
-    const handleOpen = () => setIsMapOpen(!isMapOpen);
 
     return (
         <>
-            <Modal title={languagePacks[languageIndex].modal.title} open={isMapOpen} handler={handleOpen} close={languagePacks[languageIndex].modal.close}>
+            <Modal title={languagePacks[languageIndex].modal.title} open={isMapOpen} handler={() => setIsMapOpen(!isMapOpen)} close={languagePacks[languageIndex].modal.close}>
                 <NaverMaps className="w-full h-full" />
             </Modal>
             
