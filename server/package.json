@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node --loader ts-node/esm src/index.ts"
+    "server": "npx tsx src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +25,5 @@
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "madge": "^8.0.0"
-  },
-  "proxy": "http://twc-community-elastic-env.eba-nquntjkk.ap-northeast-2.elasticbeanstalk.com"
+  }
 }

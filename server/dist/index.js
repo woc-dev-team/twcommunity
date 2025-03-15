@@ -14,9 +14,12 @@ import os from 'os';
 const app = express();
 const PORT = 8080;
 app.use(cors({
-    origin: ["http://172.30.1.12:5173", "woc-dev-team.github.io/twcommunity/"],
+    origin: "*",
+    credentials: true,
     methods: ['GET', 'POST'],
+    optionsSuccessStatus: 200
 }));
+app.options("*", cors());
 app.use(express.json());
 app.get('/search/blog', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a, _b, _c, _d;
