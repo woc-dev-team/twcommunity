@@ -18,6 +18,19 @@ app.options(["https://woc-dev-team.github.io", "http://localhost:5173"], cors())
 
 app.use(express.json());
 
+app.get('/', async (req: Request, res: Response): Promise<void> => { 
+    try {
+        res.json("Hello, God's Family");
+    } catch (error) {
+        if (error instanceof AxiosError) {
+            console.error('Connected Error: connect failure');
+        } else {
+            console.error('Unknown Error:', error);
+            res.status(500).json({ error: 'Failed to fetch data' });
+        }  
+    }
+});
+
 app.get('/search/blog', async (req: Request, res: Response): Promise<void> => {
     const query = req.query.query as string;
     if (!query) {
@@ -79,5 +92,5 @@ const getLocalIP = () => {
 };
 
 app.listen(PORT, () => {
-    console.log(`Server running at ${getLocalIP()}:${PORT}\nBelong to https://woc-dev-team.github.io/`);
+    console.log(`Server running at http://${getLocalIP()}:${PORT}\nSSH to https://woc-dev-team.github.io`);
 });
