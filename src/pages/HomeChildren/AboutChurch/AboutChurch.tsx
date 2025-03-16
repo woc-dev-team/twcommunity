@@ -1,8 +1,9 @@
-import ChurchNews from "./Actives/ChurchNews";
+import ChurchBlog from "./Actives/ChurchBlog";
 import Counsel from "./Actives/Counsel";
 import Directions from "./Actives/Directions";
 import { languagePacks } from "../../../entities/datas";
 import useMenus from "../../../features/Navbar/useMenus";
+import ChurchNews from "./Actives/ChurchNews";
 
 const AboutChurch = () => {
     const { languageIndex } = useMenus();
@@ -17,9 +18,10 @@ const AboutChurch = () => {
                 <div className="flex flex-col c_md:flex-row h-full w-full gap-5 mb-20 place-self-center">
                     <Directions title={languagePacks[languageIndex].aboutChurch.directions} />
                     <ChurchNews title={languagePacks[languageIndex].aboutChurch.news} />
+                    <ChurchBlog title={languagePacks[languageIndex].aboutChurch.blog} />
                     <Counsel title={languagePacks[languageIndex].aboutChurch.counsel.title} />
                 </div>
-                <p className="pb-3 text-xs text-center text-gray-200 hover:text-gray-700 dark:text-gray-700 dark:hover:text-gray-200">Developed by CreatyJohnKwon & Designed by TheWordChurch</p>
+                <p className="pb-3 text-xs text-center text-gray-200 hover:text-gray-700 dark:text-gray-700 dark:hover:text-gray-200 transition-all duration-500 ease-in-out">Developed by CreatyJohnKwon & Designed by TheWordChurch</p>
             </div>
         </>
     )

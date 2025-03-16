@@ -58,6 +58,7 @@ export const languagePacks = [
             title: "교회 안내",
             directions: "오시는 길",
             news: "교회 소식",
+            blog: "교회 블로그",
             counsel: { 
                 title: "양육 신청 및 신앙상담 신청",
                 nurture: {
@@ -136,6 +137,7 @@ export const languagePacks = [
             title: "Church Information",
             directions: "Directions",
             news: "Church News",
+            blog: "Church Blog",
             counsel: { 
                 title: "Spiritual Nurture & Counseling",
                 nurture: {

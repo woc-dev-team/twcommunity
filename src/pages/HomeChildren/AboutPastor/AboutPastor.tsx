@@ -11,7 +11,7 @@ const AboutPaster = () => {
                 </div>
                 <div className="hidden c_md:block c_md:col-span-6 relative w-auto min-h-screen justify-center items-center">
                     <CustomImage
-                        className="w-3/6 h-auto object-cover ml-auto transition-all duration-500 ease-in-out c_md:me-20"
+                        className="w-3/6 h-auto object-cover ml-auto transition-all duration-500 ease-in-out c_md:me-20 hover:scale-105"
                         alt="목사님 프로필 이미지"
                         src={PastorParkProfileImg}
                         gradation="b"

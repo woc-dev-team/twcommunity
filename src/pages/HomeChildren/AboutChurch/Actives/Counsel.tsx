@@ -9,7 +9,7 @@ const Counsel = ({title}: {title: string}) => {
     return (
         <>
             {/* 상담 신청 */}
-            <div className="transition-all duration-500 ease-in-out mb-20 w-full c_md:w-1/3">
+            <div className="transition-all duration-500 ease-in-out mb-20 w-full c_md:w-1/4">
                 <p className="text-2xl c_md:text-3xl mb-4 c_md:mb-10 text-black dark:text-white font-semibold">{title}</p>
                 <div className="flex-row pt-10">
                     <button className="w-2/5" onClick={() => startPopUp(languagePacks[languageIndex].aboutChurch.counsel.nurture.title, "https://docs.google.com/forms/d/e/1FAIpQLSclOc3ENeRSNp3gzyt3Xruvfp3ntuvCjuJIoXKeXr-lSIpAkw/viewform")}>
