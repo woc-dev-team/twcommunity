@@ -85,7 +85,7 @@ app.get('/view/youtube', (req, res) => __awaiter(void 0, void 0, void 0, functio
             channelId: 'UC0O_C_7ryuEUFbj3BhBgqRA',
             eventType: 'live',
             type: 'video',
-            key: 'AIzaSyAhPbwvTKhI-GwZoA3jaVtw4VyV1lHO8m8'
+            key: 'AIzaSyASpEDBc0Iu0f5K9QrdZfket4SJAYtxCbQ'
         }
     })
         .then(response => {
@@ -109,7 +109,7 @@ const fetchRecentVideos = (res, apiUrl) => __awaiter(void 0, void 0, void 0, fun
                 order: 'date',
                 type: 'video',
                 maxResults: 1,
-                key: 'AIzaSyAhPbwvTKhI-GwZoA3jaVtw4VyV1lHO8m8'
+                key: 'AIzaSyASpEDBc0Iu0f5K9QrdZfket4SJAYtxCbQ'
             }
         });
         res.status(201).json(response.data.items);
