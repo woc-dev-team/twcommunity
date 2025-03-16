@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import express from 'express';
 import axios, { AxiosError } from 'axios';
+import cron from 'node-cron';
 import cors from 'cors';
 import os from 'os';
 const app = express();
@@ -26,6 +27,7 @@ const errorFunction = (error, res, path) => {
         res.status(500).json({ error: `Message: Failed to fetch data on ${path}`, reason: error });
     }
 };
+let Datas = [];
 app.use(cors({
     origin: ["https://woc-dev-team.github.io", "http://localhost:5173"],
     credentials: true,
@@ -78,6 +80,19 @@ app.get('/search/blog', (req, res) => __awaiter(void 0, void 0, void 0, function
     }
 }));
 app.get('/view/youtube', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        if (!Datas || Datas.length === 0) {
+            res.status(404).json({ error: 'No data available.' });
+        }
+        else {
+            res.status(200).json(Datas);
+        }
+    }
+    catch (error) {
+        errorFunction(error, res, '/view/youtube');
+    }
+}));
+const time = () => {
     const apiUrl = `https://www.googleapis.com/youtube/v3/search`;
     axios.get(apiUrl, {
         params: {
@@ -90,34 +105,37 @@ app.get('/view/youtube', (req, res) => __awaiter(void 0, void 0, void 0, functio
     })
         .then(response => {
         if (response.data.items.length !== 0) {
-            res.status(200).json(response.data.items);
+            Datas = response.data.items;
         }
         else if (response.data.items.length === 0) {
-            fetchRecentVideos(res, apiUrl);
+            getVideoFromYoutube(apiUrl);
+        }
+    });
+};
+const getVideoFromYoutube = (apiUrl) => {
+    axios.get(apiUrl, {
+        params: {
+            part: 'snippet',
+            channelId: 'UC0O_C_7ryuEUFbj3BhBgqRA',
+            order: 'date',
+            type: 'video',
+            maxResults: 1,
+            key: 'AIzaSyASpEDBc0Iu0f5K9QrdZfket4SJAYtxCbQ'
         }
     })
-        .catch(error => {
-        errorFunction(error, res, '/view/youtube');
+        .then(response => {
+        Datas = response.data.items;
     });
-}));
-const fetchRecentVideos = (res, apiUrl) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const response = yield axios.get(apiUrl, {
-            params: {
-                part: 'snippet',
-                channelId: 'UC0O_C_7ryuEUFbj3BhBgqRA',
-                order: 'date',
-                type: 'video',
-                maxResults: 1,
-                key: 'AIzaSyASpEDBc0Iu0f5K9QrdZfket4SJAYtxCbQ'
-            }
-        });
-        res.status(201).json(response.data.items);
-    }
-    catch (error) {
-        errorFunction(error, res, '/view/youtube');
-    }
-});
+};
+cron.schedule('0 11 * * *', time, {
+    timezone: "Asia/Seoul"
+}); // 한국 시간 오전 11시
+cron.schedule('30 12 * * *', time, {
+    timezone: "Asia/Seoul"
+}); // 한국 시간 오후 12시 30분
+cron.schedule('0 20 * * *', time, {
+    timezone: "Asia/Seoul"
+}); // 한국 시간 오후 8시
 const getLocalIP = () => {
     const interfaces = os.networkInterfaces();
     for (const interfaceName in interfaces) {
