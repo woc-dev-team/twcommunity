@@ -6,6 +6,17 @@ import { Item } from "./types/interface";
 
 const app = express();
 const PORT = 8080;
+const errorFunction = (error: unknown, res: Response, path: string) => {
+    if (error instanceof AxiosError) {
+        const status = error.response?.status ?? 500;
+        const data = error.response?.data ?? 'No error data available';
+        console.error(`Axios Error on ${path}:`, status, data);
+        res.status(status).json({ error: `Message: Failed to fetch data on ${path}`, reason: error });
+    } else {
+        console.error(`Unknown Error on ${path}:`, error);
+        res.status(500).json({ error: `Message: Failed to fetch data on ${path}`, reason: error });
+    }
+}
 
 app.use(cors({
     origin: ["https://woc-dev-team.github.io", "http://localhost:5173"],
@@ -22,12 +33,7 @@ app.get('/', async (req: Request, res: Response): Promise<void> => {
     try {
         res.json("Hello, God's Family");
     } catch (error) {
-        if (error instanceof AxiosError) {
-            console.error('Connected Error: connect failure');
-        } else {
-            console.error('Unknown Error:', error);
-            res.status(500).json({ error: 'Failed to fetch data' });
-        }  
+        errorFunction(error, res, '/');
     }
 });
 
@@ -67,17 +73,54 @@ app.get('/search/blog', async (req: Request, res: Response): Promise<void> => {
 
         res.json(reduceData);
     } catch (error) {
-        if (error instanceof AxiosError) {
-            const status = error.response?.status ?? 500;
-            const data = error.response?.data ?? 'No error data available';
-            console.error('Axios Error:', status, data);
-            res.status(status).json({ error: 'Failed to fetch data' });
-        } else {
-            console.error('Unknown Error:', error);
-            res.status(500).json({ error: 'Failed to fetch data' });
-        }        
+        errorFunction(error, res, '/search/blog');    
     }
 });
+
+app.get('/view/youtube', async (req: Request, res: Response): Promise<void> => { 
+    const apiUrl = `https://www.googleapis.com/youtube/v3/search`;
+
+    axios.get<{ items: Item[] }>(apiUrl, 
+        { 
+            params: {
+                part: 'snippet', 
+                channelId: 'UC0O_C_7ryuEUFbj3BhBgqRA', 
+                eventType: 'live',
+                type: 'video', 
+                key: 'AIzaSyAhPbwvTKhI-GwZoA3jaVtw4VyV1lHO8m8' 
+            } 
+        })
+
+        .then(response => {
+            if (response.data.items.length !== 0) {
+                res.status(200).json(response.data.items);
+            } else if (response.data.items.length === 0) {
+                fetchRecentVideos(res, apiUrl);
+            }
+        })
+        .catch(error => {
+            errorFunction(error, res, '/view/youtube');
+        });
+});
+
+const fetchRecentVideos = async (res: Response, apiUrl: string) => {
+    try {
+        const response = await axios.get(apiUrl, {
+            params: {
+                part: 'snippet',
+                channelId: 'UC0O_C_7ryuEUFbj3BhBgqRA',
+                order: 'date',
+                type: 'video',
+                maxResults: 1,
+                key: 'AIzaSyAhPbwvTKhI-GwZoA3jaVtw4VyV1lHO8m8'
+            }
+        });
+
+        res.status(201).json(response.data.items);
+    } catch (error) {
+        errorFunction(error, res, '/view/youtube');
+    }
+};
 
 const getLocalIP = () => {
     const interfaces = os.networkInterfaces();

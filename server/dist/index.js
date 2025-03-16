@@ -13,6 +13,19 @@ import cors from 'cors';
 import os from 'os';
 const app = express();
 const PORT = 8080;
+const errorFunction = (error, res, path) => {
+    var _a, _b, _c, _d;
+    if (error instanceof AxiosError) {
+        const status = (_b = (_a = error.response) === null || _a === void 0 ? void 0 : _a.status) !== null && _b !== void 0 ? _b : 500;
+        const data = (_d = (_c = error.response) === null || _c === void 0 ? void 0 : _c.data) !== null && _d !== void 0 ? _d : 'No error data available';
+        console.error(`Axios Error on ${path}:`, status, data);
+        res.status(status).json({ error: `Message: Failed to fetch data on ${path}`, reason: error });
+    }
+    else {
+        console.error(`Unknown Error on ${path}:`, error);
+        res.status(500).json({ error: `Message: Failed to fetch data on ${path}`, reason: error });
+    }
+};
 app.use(cors({
     origin: ["https://woc-dev-team.github.io", "http://localhost:5173"],
     credentials: true,
@@ -26,17 +39,10 @@ app.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         res.json("Hello, God's Family");
     }
     catch (error) {
-        if (error instanceof AxiosError) {
-            console.error('Connected Error: connect failure');
-        }
-        else {
-            console.error('Unknown Error:', error);
-            res.status(500).json({ error: 'Failed to fetch data' });
-        }
+        errorFunction(error, res, '/');
     }
 }));
 app.get('/search/blog', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    var _a, _b, _c, _d;
     const query = req.query.query;
     if (!query) {
         res.status(400).json({ error: 'Query parameter is required' });
@@ -68,18 +74,50 @@ app.get('/search/blog', (req, res) => __awaiter(void 0, void 0, void 0, function
         res.json(reduceData);
     }
     catch (error) {
-        if (error instanceof AxiosError) {
-            const status = (_b = (_a = error.response) === null || _a === void 0 ? void 0 : _a.status) !== null && _b !== void 0 ? _b : 500;
-            const data = (_d = (_c = error.response) === null || _c === void 0 ? void 0 : _c.data) !== null && _d !== void 0 ? _d : 'No error data available';
-            console.error('Axios Error:', status, data);
-            res.status(status).json({ error: 'Failed to fetch data' });
-        }
-        else {
-            console.error('Unknown Error:', error);
-            res.status(500).json({ error: 'Failed to fetch data' });
-        }
+        errorFunction(error, res, '/search/blog');
     }
 }));
+app.get('/view/youtube', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const apiUrl = `https://www.googleapis.com/youtube/v3/search`;
+    axios.get(apiUrl, {
+        params: {
+            part: 'snippet',
+            channelId: 'UC0O_C_7ryuEUFbj3BhBgqRA',
+            eventType: 'live',
+            type: 'video',
+            key: 'AIzaSyAhPbwvTKhI-GwZoA3jaVtw4VyV1lHO8m8'
+        }
+    })
+        .then(response => {
+        if (response.data.items.length !== 0) {
+            res.status(200).json(response.data.items);
+        }
+        else if (response.data.items.length === 0) {
+            fetchRecentVideos(res, apiUrl);
+        }
+    })
+        .catch(error => {
+        errorFunction(error, res, '/view/youtube');
+    });
+}));
+const fetchRecentVideos = (res, apiUrl) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const response = yield axios.get(apiUrl, {
+            params: {
+                part: 'snippet',
+                channelId: 'UC0O_C_7ryuEUFbj3BhBgqRA',
+                order: 'date',
+                type: 'video',
+                maxResults: 1,
+                key: 'AIzaSyAhPbwvTKhI-GwZoA3jaVtw4VyV1lHO8m8'
+            }
+        });
+        res.status(201).json(response.data.items);
+    }
+    catch (error) {
+        errorFunction(error, res, '/view/youtube');
+    }
+});
 const getLocalIP = () => {
     const interfaces = os.networkInterfaces();
     for (const interfaceName in interfaces) {
