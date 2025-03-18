@@ -10,3 +10,4 @@ export const dropdownAtom = atom<boolean>(false);
 export const blogAtom = atom<BlogItem[]>([]);
 export const activeAtom = atom<number | null>(null);
 export const languageAtom = atom<number>(0);
+export const videoAtom = atom<string | "">("");

@@ -40,6 +40,11 @@ interface BlogListProps {
     item: BlogItem;
 }
 
+interface VideoEmbedProps {
+    className: string;
+    url: string;
+}
+
 export type {
     BlogItem,
     ModalProps,
@@ -47,5 +52,6 @@ export type {
     NaverMapsProps,
     PastorTextsProps,
     CustomImageProps,
-    BlogListProps
+    BlogListProps,
+    VideoEmbedProps
 }
