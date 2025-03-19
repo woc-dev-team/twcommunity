@@ -8,7 +8,7 @@ const ChurchBlog = ({title}: {title: string}) => {
         <>
             {/* 블로그 */}
             <div
-                className={`ms-3 transition-all duration-500 ease-in-out mb-20 ${active === 1 ? "w-full" : "w-full c_md:w-1/4"}`}
+                className={`ms-3 me-3 transition-all duration-500 ease-in-out mb-20 ${active === 1 ? "w-full" : "w-full c_md:w-1/4"}`}
                 onMouseEnter={() => setActive(1)}
                 onMouseLeave={() => setActive(null)}
             >
