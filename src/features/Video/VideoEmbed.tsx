@@ -5,7 +5,7 @@ const VideoEmbed = ({ url, className }: VideoEmbedProps) => {
     return (
         <div className={className}>
             <ReactPlayer 
-                url={`${url}&t=3000`}
+                url={`${url}&t=900`}
                 width="100%"
                 height="254px"
                 playing  // 자동 재생
