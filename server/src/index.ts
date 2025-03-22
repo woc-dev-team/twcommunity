@@ -130,17 +130,17 @@ const getVideoFromYoutube = (apiUrl: string) => {
     })
 };
 
-cron.schedule('0 11 * * *', time, {
-    timezone: "Asia/Seoul"
-});      // 한국 시간 오전 11시
+cron.schedule('0 11 * * 0', time, { timezone: "Asia/Seoul" });  
+// 매주 일요일 오전 11시
 
-cron.schedule('30 12 * * *', time, {
-    timezone: "Asia/Seoul"
-});     // 한국 시간 오후 12시 30분
+cron.schedule('30 12 * * 0', time, { timezone: "Asia/Seoul" });  
+// 매주 일요일 오후 12시 30분
 
-cron.schedule('0 20 * * *', time, {
-    timezone: "Asia/Seoul"
-});      // 한국 시간 오후 8시
+cron.schedule('0 20 * * 5', time, { timezone: "Asia/Seoul" });  
+// 매주 금요일 오후 8시
+
+cron.schedule('0 22 * * 5', time, { timezone: "Asia/Seoul" });  
+// 매주 금요일 오후 10시
 
 const getLocalIP = () => {
     const interfaces = os.networkInterfaces();
