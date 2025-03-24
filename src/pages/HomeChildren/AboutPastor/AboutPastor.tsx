@@ -1,7 +1,7 @@
 import PastorParkProfileImg from "../../../assets/images/pastor-park.png";
 import CustomImage from "../../../features/Image/CustomImage";
 import PastorTexts from "./PastorTexts";
-import TheWordChurchLogo from "../../../assets/images/logo_1.jpeg";
+import TheWordChurchLogo from "../../../assets/images/logo_2.png";
 
 const AboutPaster = () => {
     return (
