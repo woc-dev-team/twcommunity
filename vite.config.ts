@@ -7,6 +7,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export default defineConfig({
+  assetsInclude: ["**/*.png", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
   plugins: [react(), tsconfigPaths()],
   base: "/twcommunity/",
   resolve: {
