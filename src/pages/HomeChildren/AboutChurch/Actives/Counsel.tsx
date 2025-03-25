@@ -21,7 +21,7 @@ const Counsel = ({title}: {title: string}) => {
                     </div>
                 </div>
                 <div className="flex-row mt-24 c_md:pt-0">
-                    <button className="w-2/5" onClick={() => startPopUp(languagePacks[languageIndex].aboutChurch.counsel.nurture.title, "https://docs.google.com/forms/d/e/1FAIpQLSfHjzaTOq0CYpptmyrdpmGNFu6oVOV9Qcf-v1p_w6oE7X1z8w/viewform")}>
+                    <button className="w-2/5" onClick={() => startPopUp(languagePacks[languageIndex].aboutChurch.counsel.counseling.title, "https://docs.google.com/forms/d/e/1FAIpQLSfHjzaTOq0CYpptmyrdpmGNFu6oVOV9Qcf-v1p_w6oE7X1z8w/viewform")}>
                         <img src={QRCounseling} className="place-self-center rounded-lg hover:scale-105 transition-all duration-500 ease-in-out" />
                     </button>
                     <div className="h-full w-full">

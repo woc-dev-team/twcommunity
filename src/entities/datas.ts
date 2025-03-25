@@ -88,7 +88,7 @@ export const languagePacks = [
         modal: {
             title: "위치 정보",
             close: "닫기",
-            confirm: "로 이동하시겠습니까?",
+            confirm: "으로 이동하시겠습니까?",
             maps: "네이버 지도"
         }
     },
