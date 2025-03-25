@@ -2,9 +2,11 @@ import CustomImage from "../../../features/Image/CustomImage";
 import { PastorTextsProps } from "../../../entities/interface";
 import useMenus from "../../../features/Navbar/useMenus";
 import { languagePacks } from "../../../entities/datas";
+import useBlog from "../../../features/NaverBlogs/useBlog";
 
 const PastorTexts = ({profileImg}: PastorTextsProps) => {
     const { languageIndex } = useMenus();
+    const { openPopup } = useBlog();
 
     return (
         <>
@@ -14,7 +16,7 @@ const PastorTexts = ({profileImg}: PastorTextsProps) => {
             </div>
             <p className="text-xl c_sm:text-2xl c_md:text-3xl mt-3 c_md:mt-12 transition-all duration-500 ease-in-out hover:scale-105">{languagePacks[languageIndex].pastorTexts.Name}</p>
             <p className="text-lg c_sm:text-lg c_md:text-2xl mt-7 c_md:mt-10 font-thin transition-all duration-500 ease-in-out hover:scale-105">{languagePacks[languageIndex].pastorTexts.p1}</p>
-            <p className="text-lg c_sm:text-lg c_md:text-2xl mt-3 c_md:mt-6 font-thin transition-all duration-500 ease-in-out hover:scale-105">{languagePacks[languageIndex].pastorTexts.p2}</p>
+            <button onClick={() => openPopup("https://ofchurch.github.io/")} className="text-lg c_sm:text-lg c_md:text-2xl mt-3 c_md:mt-6 font-thin transition-all duration-500 ease-in-out hover:scale-105 hover:font-semibold">{languagePacks[languageIndex].pastorTexts.p2}</button>
             <p className="text-lg c_sm:text-lg c_md:text-2xl mt-3 c_md:mt-6 font-thin transition-all duration-500 ease-in-out hover:scale-105">{languagePacks[languageIndex].pastorTexts.p3}</p>
             <p className="text-lg c_sm:text-lg c_md:text-2xl mt-3 c_md:mt-6 font-thin transition-all duration-500 ease-in-out hover:scale-105">{languagePacks[languageIndex].pastorTexts.p4}</p>
             <p className="text-lg c_sm:text-lg c_md:text-2xl mt-3 c_md:mt-6 font-thin transition-all duration-500 ease-in-out hover:scale-105">{languagePacks[languageIndex].pastorTexts.p5}</p>
