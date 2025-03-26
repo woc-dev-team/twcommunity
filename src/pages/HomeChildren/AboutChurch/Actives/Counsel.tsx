@@ -1,5 +1,5 @@
-import QRNurture from "../../../../assets/images/qr_code_2.png";
-import QRCounseling from "../../../../assets/images/qr_code.jpeg";
+import QRNurture from "../../../../assets/images/qr_nuture.png";
+import QRCounseling from "../../../../assets/images/qr_counsel.jpeg";
 import { languagePacks } from "../../../../entities/datas";
 import useMenus from "../../../../features/Navbar/useMenus";
 
