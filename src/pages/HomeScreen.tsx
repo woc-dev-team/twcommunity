@@ -9,7 +9,7 @@ const HomeScreen = () => {
       <MainElements />
       <ChurchVision />
       <AboutPaster />
-      <AboutChurch />
+      <AboutChurch /> 
     </div>
   )
 }

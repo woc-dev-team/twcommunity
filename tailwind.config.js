@@ -8,7 +8,7 @@ export default {
       },
       screens: {
         "twc_main_text_xl":"1498px",
-        "twc_main_text_md":"1271px",
+        "c_lg":"1271px",
         "w_max":"1800px",
         "c_image":"950px",
         "c_md":"1105px",

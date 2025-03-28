@@ -6,11 +6,9 @@ const NaverMaps = ({className}: NaverMapsProps) => {
 
     return (
         <>
-            <div className={className}>
-                {isMapLoaded && (
-                    <div id="map" className="h-full w-full z-10" />
-                )}
-            </div>
+            {isMapLoaded && (
+                <div id="map" className={className} />
+            )}
         </>
     )
 }
