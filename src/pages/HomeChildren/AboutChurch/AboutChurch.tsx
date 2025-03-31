@@ -20,7 +20,7 @@ const AboutChurch = () => {
                     <ChurchNews title={languagePacks[languageIndex].aboutChurch.news.title} />
                     <Counsel title={languagePacks[languageIndex].aboutChurch.counsel.title} />
                 </div>
-                <p className="text-xs text-center text-gray-200 hover:text-gray-700 dark:text-gray-700 dark:hover:text-gray-200 transition-all duration-500 ease-in-out">Developed by CreatyJohnKwon & Designed by TheWordChurch</p>
+                {/* <p className="text-xs text-center text-gray-200 hover:text-gray-700 dark:text-gray-700 dark:hover:text-gray-200 transition-all duration-500 ease-in-out">Developed by CreatyJohnKwon & Designed by TheWordChurch</p> */}
             </div>
         </>
     )

@@ -9,7 +9,7 @@ dotenv.config();
 export default defineConfig({
   assetsInclude: ["**/*.png", "**/*.jpeg", "**/*.jpg", "**/*.svg"],
   plugins: [react(), tsconfigPaths()],
-  base: "/twcommunity/",
+  base: "./",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
@@ -20,8 +20,8 @@ export default defineConfig({
     port: 5173, 
     strictPort: true,
     proxy: {
-      "/search/blog": {
-        target: "https://twcommunity-server.store",
+      '/v1': {
+        target: 'https://openapi.naver.com',
         changeOrigin: true,
         secure: false,
       },

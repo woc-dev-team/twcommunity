@@ -7,6 +7,14 @@ interface BlogItem {
     postdate: string;
 } 
 
+interface Item {
+    title: string;
+    link: string;
+    description: string;
+    bloggername: string;
+    postdate: string;
+}
+
 // Components Props Interfaces
 interface CustomImageProps {
     alt: string;
@@ -46,6 +54,7 @@ interface VideoEmbedProps {
 }
 
 export type {
+    Item,
     BlogItem,
     ModalProps,
     NavListProps,

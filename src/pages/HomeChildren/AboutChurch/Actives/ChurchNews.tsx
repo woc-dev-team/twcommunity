@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import useBlog from "../../../../features/NaverBlogs/useBlog";
-import useVideo from "../../../../features/Video/useVideo";
+// import useVideo from "../../../../features/Video/useVideo";
 import VideoEmbed from "../../../../features/Video/VideoEmbed";
 import { Calendar, BookOpen, Users, Video, Clock, Hand } from "lucide-react";
 import { languagePacks } from "../../../../entities/datas";
@@ -8,12 +8,12 @@ import useMenus from "../../../../features/Navbar/useMenus";
 
 const ChurchNews = ({title}: {title: string}) => {
     const { setActive } = useBlog();
-    const { getVideo, videoId } = useVideo();
+    // const { getVideo, videoId } = useVideo();
     const { languageIndex } = useMenus();
 
-    useEffect(() => {
-        getVideo();
-    }, [videoId])
+    // useEffect(() => {
+    //     getVideo();
+    // }, [videoId])
 
     return (
         <>
@@ -26,14 +26,14 @@ const ChurchNews = ({title}: {title: string}) => {
                 <p className="text-2xl c_md:text-3xl mb-4 c_md:mb-10 text-black dark:text-white font-semibold">{title}</p>
                 <div className="h-auto md:h-screen w-full mb-14 md:mb-0 flex flex-col items-center text-center ttext-blue-900 dark:text-blue-100">
                     <div className="w-full h-[254px] bg-gray-100 mt-5 rounded-lg shadow-lg dark:shadow-slate-700">
-                        {videoId ? 
-                            <VideoEmbed className="w-full mx-aut rounded-lg overflow-hidden relative" url={`https://www.youtube.com/watch?v=${videoId}`} />
-                        :
+                        {/* {videoId ?  */}
+                            <VideoEmbed className="w-full mx-aut rounded-lg overflow-hidden relative" url={`https://www.youtube.com/watch?v=V_l03DaF8kM`} />
+                        {/* :http://thewordchurch.or.kr/
                             <div className="text-center font-light text-lg mt-24">
                                 <p>영상을 불러오는 중입니다.</p>
                                 <p>잠시만 기다려주세요.</p>
                             </div>
-                        } 
+                        }  */}
                     </div>
     
                     <div className="text-start w-full mt-10 px-8 py-6 border-0.5 border-gray-100 dark:border-gray-900 rounded-xl shadow-lg dark:shadow-slate-700 text-lg">
