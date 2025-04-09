@@ -12,9 +12,9 @@ const Navbar = () => {
         // shadow-md
         <nav className={`sticky top-0 z-40 bg-white dark:bg-black transition-all duration-500 ease-in-out w-full
             ${isScrolled ? 'transition-shadow shadow-md dark:shadow-gray-900' : 'shadow-none'}`}>
-            <div className="max-w-screen-w_max w-full flex items-center justify-between mx-auto p-4">
+            <div className="w-screen flex items-center justify-between mx-auto p-4">
                 {/* 네비게이션 바 로고 */}
-                <a href="https://woc-dev-team.github.io/twcommunity" className="flex items-center space-x-3 rtl:space-x-reverse">
+                <a href="http://thewordchurch.or.kr" className="flex items-center space-x-3 rtl:space-x-reverse c_md:ms-10 transition-all duration-500 ease-in-out">
                     <img src={navLogo} alt="대한예수교장로회합동" className="w-9 h-9 c_md:w-12 c_md:h-12" />
                     <span className="self-center hidden c_sm:block c_sm:text-lg c_md:text-2xl whitespace-nowrap dark:text-white font-semibold">
                         The Word Church

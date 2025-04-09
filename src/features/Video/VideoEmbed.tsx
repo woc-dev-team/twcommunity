@@ -7,7 +7,7 @@ const VideoEmbed = ({ url, className }: VideoEmbedProps) => {
             <ReactPlayer 
                 url={`${url}`}
                 width="100%"
-                height="254px"
+                height="100%"
                 playing  // 자동 재생
                 muted  // 음소거
                 controls={false}  // 재생 컨트롤 표시

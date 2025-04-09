@@ -12,7 +12,6 @@ const BlogList = ({item}: BlogListProps) => {
                 </button>
                 <p className="col-span-2 text-end">{item.postdate}</p>
             </div>
-            {/* <p className="text-xs text-start">{item.description}</p> */}
         </li>
     )
 }

@@ -27,8 +27,8 @@ const useMaps = () => {
         const mapOptions = {
             zoomControl: true,
             zoomControlOptions: {
-              style: naver.maps.ZoomControlStyle.SMALL,
-              position: naver.maps.Position.TOP_RIGHT,
+                style: naver.maps.ZoomControlStyle.SMALL,
+                position: naver.maps.Position.TOP_RIGHT,
             },
             center: new naver.maps.LatLng(mapData.latitude, mapData.longitude),
             zoom: 18,
