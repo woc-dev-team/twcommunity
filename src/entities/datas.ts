@@ -3,21 +3,25 @@ export const languagePacks = [
         menu: [
             {
                 text: "홈", 
-                link: "#/home"
+                link: "home"
             },
             {
                 text: "교회 비전",
-                link: "#/vision"
+                link: "vision"
             },
             {
                 text: "담임 목사", 
-                link: "#/pastor"
+                link: "pastor"
             },
             {
                 text: "교회 안내", 
-                link: "#/info"
-            }
+                link: "info"
+            },
         ],
+        disciple: {
+            text: "제자 훈련",
+            link: "/disciple"
+        },
         language: {
             title: "한국어 (KR)", 
             sub: "KR",
@@ -96,21 +100,25 @@ export const languagePacks = [
         menu: [
             {
                 text: "Home", 
-                link: "#/home"
+                link: "home"
             },
             {
                 text: "Vision",
-                link: "#/vision"
+                link: "vision"
             },
             {
                 text: "Pastor", 
-                link: "#/pastor"
+                link: "pastor"
             },
             {
-                text: "Information", 
-                link: "#/info"
+                text: "information", 
+                link: "info"
             }
         ],
+        disciple: {
+            text: "discipleship",
+            link: "/disciple"
+        },
         language: {
             title: "English (US)", 
             sub: "US",

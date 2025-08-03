@@ -21,8 +21,8 @@ const ChurchNews = ({title}: {title: string}) => {
                     <div className="w-full mt-5 rounded-lg shadow-lg dark:shadow-slate-700 overflow-hidden">
                         <div className="aspect-video bg-gray-100">
                             <VideoEmbed 
-                            className="w-full h-full rounded-lg" 
-                            url="https://www.youtube.com/watch?v=_ikhIHoA2Zg&t=3s" 
+                                className="w-full h-full rounded-lg"
+                                url="https://www.youtube.com/watch?v=_ikhIHoA2Zg&t=3s" 
                             />
                         </div>
                     </div>

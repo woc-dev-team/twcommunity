@@ -3,6 +3,7 @@ import NavList from "./NavList";
 import { languagePacks } from "../../entities/datas";
 import navLogo from "@/assets/images/nav_logo.svg";
 import useMenus from "./useMenus";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const { isScrolled, languageIndex } = useMenus();
@@ -24,6 +25,7 @@ const Navbar = () => {
                 {/* 메뉴 */}
                 <div className="hidden c_md:flex c_md:w-auto c_md:order-1 bg-transparent w-full justify-center ml-auto me-5">
                     <ul className="hover_effect flex font-medium p-4 c_md:p-0 mt-4 border border-gray-100 rounded-lg c_md:space-x-8 rtl:space-x-reverse c_md:flex-row md:mt-0 c_md:border-0 c_md:dark:bg-transparent">
+                        {/* 해시 라우터 */}
                         {menus.map((menuList, index) => (
                             <NavList
                                 key={index}
@@ -31,6 +33,11 @@ const Navbar = () => {
                                 menuLink={menuList.link}
                             />
                         ))}
+
+                        {/* 브라우스 라우터 */}
+                        <Link to={languagePacks[languageIndex].disciple.link} className="block py-2 px-3 c_md:text-lg p-0 c_md:p-4 text-gray-900 rounded-sm dark:text-white  dark:hover:text-white md:dark:hover:bg-transparent">
+                            {languagePacks[languageIndex].disciple.text}
+                        </Link>
                     </ul>
                 </div>
 
