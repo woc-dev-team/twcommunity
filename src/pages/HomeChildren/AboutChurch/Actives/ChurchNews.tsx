@@ -22,7 +22,7 @@ const ChurchNews = ({title}: {title: string}) => {
                         <div className="aspect-video bg-gray-100">
                             <VideoEmbed 
                                 className="w-full h-full rounded-lg"
-                                url="https://www.youtube.com/embed/N1mLKxXqm18?list=PL5qH14UOP1LkJHoppYaoTEmz4uNMKQmNX&index=1&autoplay=1&mute=1" 
+                                url="https://www.youtube.com/embed/N1mLKxXqm18?list=PL5qH14UOP1Lkd84kcUj7wkK5HGQ28zQsB&index=1&autoplay=1&mute=1" 
                                 autoplay={true}
                             />
                         </div>
