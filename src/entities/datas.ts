@@ -62,20 +62,16 @@ export const languagePacks = [
             title: "교회 안내",
             directions: "오시는 길",
             news: {
-                title: "교회 소식",
-                worship: {
-                    title: "주일 예배",
+                title: "주일 설교",
+                group: {
+                    title: "모임 안내",
                     p1: "오전 11시 - 세대통합 예배",
-                    p2: "오후 1시 30분 - 소그룹 모임",
-                    p3: "오후 3시 - 교리 강좌"
+                    p2: "오후 1시 30분 - 제자 훈련 | 소그룹 모임",
+                    p3: "오후 3시 - 교리 강좌",
+                    p4: "수요일 오후 10시 - 온라인 성경공부",
+                    p5: "금요일 오후 8시 - 금요통독기도회"
                 },
-                class: {
-                    title: "주중 모임",
-                    p1: "수요일 오후 10시 - 온라인 성경공부",
-                    p2: "금요일 오후 8시 - 금요통독기도회"
-                }
             },
-            //  "교회 소식",
             blog: "교회 블로그",
             counsel: { 
                 title: "양육 및 신앙상담 신청",
@@ -159,18 +155,15 @@ export const languagePacks = [
             title: "Church Information",
             directions: "Directions",
             news: {
-                title: "Church News",
-                worship: {
-                    title: "Sunday Worship",
+                title: "Sunday Preaching",
+                group: {
+                    title: "Meeting Information",
                     p1: "11:00 AM – Intergenerational Worship Service",
-                    p2: "1:30 PM – Small Group Meeting",
-                    p3: "3:00 PM – Doctrine Lecture"
+                    p2: "1:30 PM – Discipleship | Small Group Meeting",
+                    p3: "3:00 PM – Doctrine Lecture",
+                    p4: "Wednesday, 10:00 PM – Online Bible Study",
+                    p5: "Friday, 8:00 PM – Friday Scripture Reading & Prayer Meeting"
                 },
-                class: {
-                    title: "Weekday Gatherings",
-                    p1: "Wednesday, 10:00 PM – Online Bible Study",
-                    p2: "Friday, 8:00 PM – Friday Scripture Reading & Prayer Meeting"
-                }
             },
             blog: "Church Blog",
             counsel: { 

@@ -1,6 +1,6 @@
 import useBlog from "../../../../features/NaverBlogs/useBlog";
 import VideoEmbed from "../../../../features/Video/VideoEmbed";
-import { Calendar, BookOpen, Users, Video, Clock, Hand } from "lucide-react";
+import { Calendar, BookOpen, Users, Clock, Hand } from "lucide-react";
 import { languagePacks } from "../../../../entities/datas";
 import useMenus from "../../../../features/Navbar/useMenus";
 
@@ -32,36 +32,28 @@ const ChurchNews = ({title}: {title: string}) => {
                         <div className="pb-3 pt-2">
                             <p className="text-lg c_lg:text-2xl font-sans tracking-wide flex items-center gap-2 transition-all duration-500 ease-in-out">
                                 <Calendar className="w-5 h-5 text-blue-900 dark:text-blue-100 me-1" />
-                                <span>{languagePacks[languageIndex].aboutChurch.news.worship.title}</span>
+                                <span>{languagePacks[languageIndex].aboutChurch.news.group.title}</span>
                             </p>
                             <ul className="text-base c_lg:text-xl mt-3 space-y-3 text-gray-700 dark:text-gray-300 font-thin transition-all duration-500 ease-in-out">
                                 <li className="flex items-center gap-2">
                                     <Clock className="w-4 h-4 text-blue-900 dark:text-blue-100 me-1" /> 
-                                    <span>{languagePacks[languageIndex].aboutChurch.news.worship.p1}</span>
+                                    <span>{languagePacks[languageIndex].aboutChurch.news.group.p1}</span>
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <Users className="w-4 h-4 text-blue-900 dark:text-blue-100 me-1" />
-                                    <span>{languagePacks[languageIndex].aboutChurch.news.worship.p2}</span>
+                                    <span>{languagePacks[languageIndex].aboutChurch.news.group.p2}</span>
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <BookOpen className="w-4 h-4 text-blue-900 dark:text-blue-100 me-1" />
-                                    <span>{languagePacks[languageIndex].aboutChurch.news.worship.p3}</span>
+                                    <span>{languagePacks[languageIndex].aboutChurch.news.group.p3}</span>
                                 </li>
-                            </ul>
-                        </div>
-                        <div className="mt-6 pb-3 pt-6">
-                            <p className="text-lg c_lg:text-2xl font-sans tracking-wide flex items-center gap-2 transition-all duration-500 ease-in-out">
-                                <Video className="w-5 h-5 text-blue-900 dark:text-blue-100 me-1" />
-                                <span>{languagePacks[languageIndex].aboutChurch.news.class.title}</span>
-                            </p>
-                            <ul className="text-base c_lg:text-xl mt-3 space-y-3 text-gray-700 dark:text-gray-300 font-thin transition-all duration-500 ease-in-out">
                                 <li className="flex items-center gap-2">
                                     <BookOpen className="w-4 h-4 text-blue-900 dark:text-blue-100 me-1" />
-                                    <span>{languagePacks[languageIndex].aboutChurch.news.class.p1}</span>
+                                    <span>{languagePacks[languageIndex].aboutChurch.news.group.p4}</span>
                                 </li>
                                 <li className="flex items-center gap-2">
                                     <Hand className="w-4 h-4 text-blue-900 dark:text-blue-100 me-1" />
-                                    <span>{languagePacks[languageIndex].aboutChurch.news.class.p2}</span>
+                                    <span>{languagePacks[languageIndex].aboutChurch.news.group.p5}</span>
                                 </li>
                             </ul>
                         </div>
