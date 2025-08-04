@@ -2,6 +2,7 @@ import { languagePacks } from "../../entities/datas";
 import useMenus from "../Navbar/useMenus";
 import NavList from "../Navbar/NavList";
 import { X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
     const { isMenuOn, setIsMenuOn, languageIndex } = useMenus();
@@ -28,6 +29,11 @@ const Sidebar = () => {
                             menuLink={menuList.link}
                         />
                     ))}
+
+                    {/* 브라우스 라우터 */}
+                    <Link to={languagePacks[languageIndex].disciple.link} onClick={() => setIsMenuOn(!isMenuOn)} className="block py-2 px-3 c_md:text-lg p-0 c_md:p-4 text-gray-900 rounded-sm dark:text-white dark:hover:text-white md:dark:hover:bg-transparent">
+                        {languagePacks[languageIndex].disciple.text}
+                    </Link>
                 </ul>
             </div>
 
