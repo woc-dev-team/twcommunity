@@ -51,6 +51,7 @@ interface BlogListProps {
 interface VideoEmbedProps {
     className: string;
     url: string;
+    autoplay?: boolean;
 }
 
 export type {
