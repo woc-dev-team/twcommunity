@@ -2,8 +2,8 @@ import { useAtom } from "jotai";
 import { mapData } from "../../entities/datas";
 import { useEffect } from "react";
 import { mapsOpenAtom, mapsLoadedAtom } from "../../entities/jotai";
-import useMenus from "../Navbar/useMenus";
-import { languagePacks } from "../../entities/datas";
+// import useMenus from "../Navbar/useMenus";
+// import { languagePacks } from "../../entities/datas";
 import useBlog from "../NaverBlogs/useBlog";
 
 let mapInstance: naver.maps.Map | null = null;
@@ -19,43 +19,65 @@ const loadScript = (src: string, callback: () => void) => {
 const useMaps = () => {
     const [isMapLoaded, setMapLoaded] = useAtom(mapsLoadedAtom);
     const [isMapOpen, setIsMapOpen] = useAtom(mapsOpenAtom);
-    const { languageIndex } = useMenus();
+    // const { languageIndex } = useMenus();
     const { setActive, active } = useBlog();
     
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const initMap = () => {
         const mapOptions = {
-            zoomControl: true,
-            zoomControlOptions: {
-                style: naver.maps.ZoomControlStyle.SMALL,
-                position: naver.maps.Position.TOP_RIGHT,
-            },
+            zoomControl: false,
             center: new naver.maps.LatLng(mapData.latitude, mapData.longitude),
             zoom: 18,
-            mapTypeId: naver.maps.MapTypeId.NORMAL
+            mapTypeId: naver.maps.MapTypeId.TERRAIN
         };
 
-        // 지도 초기화 확인
         if (document.getElementById('map')) {
             mapInstance = new naver.maps.Map('map', mapOptions);
         }
-    
+
         // Marker 생성
         const marker = new naver.maps.Marker({
             position: new naver.maps.LatLng(mapData.latitude, mapData.longitude),
             map: mapInstance || undefined,
-        });
-    
-        // Marker 클릭 시 지도 초기화
-        naver.maps.Event.addListener(marker, 'click', () => {
-            if (confirm(`${languagePacks[languageIndex].modal.maps}${languagePacks[languageIndex].modal.confirm}`)) {
-                window.open(`https://map.naver.com/p/entry/place/1886682973?c=15.00,0,0,0,dh`, 'woc_naver_map');
-            } else {
-                mapInstance?.setCenter(new naver.maps.LatLng(mapData.latitude, mapData.longitude));
-                mapInstance?.setZoom(18);
+            title: "더워드교회",
+                icon: {
+                url: '/icons/church-marker.png', // 1. public 폴더의 이미지 경로
+                size: new naver.maps.Size(32, 32), // 2. 이미지의 원본 크기
+                origin: new naver.maps.Point(0, 0), // 3. 이미지의 시작점
+                anchor: new naver.maps.Point(16, 32) // 4. 아이콘의 좌표 정렬 지점
             }
         });
-    
+
+        // 정보 창(InfoWindow) 생성 및 내용 정의
+        const infoWindow = new naver.maps.InfoWindow({
+            content: `
+                <div class="info-window-simple">
+                    <p class="title">더워드교회</p>
+                    <a href="https://map.naver.com/p/search/%EB%8D%94%EC%9B%8C%EB%93%9C%EA%B5%90%ED%9A%8C?c=15.00,0,0,0,dh" class="address">서울특별시 노원구 섬밭로 30</a>
+                </div>
+            `,
+            // infoWindow 기본 스타일 제거
+            borderWidth: 0,
+            backgroundColor: "transparent",
+            disableAnchor: true,
+            pixelOffset: new naver.maps.Point(0, -20)
+        });
+
+        // 마커 클릭 시 정보 창 열기
+        naver.maps.Event.addListener(marker, 'click', () => {
+            if (mapInstance) {
+                if (infoWindow.getMap()) {
+                    infoWindow.close();
+                } else {
+                    infoWindow.open(mapInstance, marker);
+                }
+            }
+        });
+
+        if (mapInstance) {
+            infoWindow.open(mapInstance, marker);
+        }
+
         // 지도 로드 완료
         setMapLoaded(true);
     };

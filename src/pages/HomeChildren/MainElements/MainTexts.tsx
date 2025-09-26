@@ -27,7 +27,7 @@ const MainTexts = () => {
                 <Tippy content="더워드처치 유튜브" key={"youtube"}>
                     <button 
                         className="hover:scale-125 transition-all duration-500 ease-in-out" 
-                        onClick={() => openPopup("https://www.youtube.com/@thewordchurch522")}>
+                        onClick={() => openPopup("https://www.youtube.com/@더워드교회")}>
                             <FaYoutube className="w-[20px] c_md:w-[30px] h-auto text-red-600 dark:text-white"/>
                     </button>
                 </Tippy>

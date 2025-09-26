@@ -48,3 +48,29 @@ html {
     }
 }
   
+/* 심플한 네모 박스 스타일 */
+.info-window-simple {
+  padding: 8px 12px; /* 텍스트와 테두리 사이의 최소한의 여백 */
+  background-color: #ffffff; /* 아래 지도가 비치지 않도록 배경색 지정 */
+  border: 1px solid #666; /* 네모 박스 테두리 */
+  text-align: center;
+  font-family: 'Pretendard', sans-serif;
+  margin-bottom: -15px;
+}
+
+/* 교회 이름 스타일 */
+.info-window-simple .title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+/* 주소 스타일 */
+.info-window-simple .address {
+  font-size: 12px;
+  color: #555;
+  margin: 4px 0 0 0; /* 위쪽 텍스트와의 간격 */
+  padding: 0;
+}
