@@ -1,113 +1,118 @@
 import { useAtom } from "jotai";
 import { mapData } from "../../entities/datas";
-import { useEffect } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import { mapsOpenAtom, mapsLoadedAtom } from "../../entities/jotai";
-// import useMenus from "../Navbar/useMenus";
-// import { languagePacks } from "../../entities/datas";
 import useBlog from "../NaverBlogs/useBlog";
 
-let mapInstance: naver.maps.Map | null = null;
+// --- 이미지 및 지도 설정 상수 ---
+const DISPLAY_IMAGE_WIDTH = 40;
+const DISPLAY_IMAGE_HEIGHT = 40;
 
-const loadScript = (src: string, callback: () => void) => {
+// --- 스크립트 로더 (변경 없음) ---
+const loadScript = (src: string, onLoaded: () => void) => {
     const script = document.createElement('script');
     script.type = 'text/javascript';
     script.src = src;
-    script.onload = () => callback();
+    script.onload = onLoaded;
     document.head.appendChild(script);
 };
 
-const useMaps = () => {
+// --- 개선된 useMaps 훅 ---
+const useMaps = (mapElementId: string) => { // 1. 지도를 그릴 DOM 요소의 id를 인자로 받음
     const [isMapLoaded, setMapLoaded] = useAtom(mapsLoadedAtom);
     const [isMapOpen, setIsMapOpen] = useAtom(mapsOpenAtom);
-    // const { languageIndex } = useMenus();
-    const { setActive, active } = useBlog();
-    
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    const initMap = () => {
-        const mapOptions = {
-            zoomControl: false,
-            center: new naver.maps.LatLng(mapData.latitude, mapData.longitude),
-            zoom: 18,
-            mapTypeId: naver.maps.MapTypeId.TERRAIN
-        };
+    const { active, setActive } = useBlog();
 
-        if (document.getElementById('map')) {
-            mapInstance = new naver.maps.Map('map', mapOptions);
+    // 2. 전역 변수 대신 useRef로 map 인스턴스를 관리
+    const mapRef = useRef<naver.maps.Map | null>(null);
+
+    // 3. useCallback으로 불필요한 함수 재생성을 방지
+    const initMap = useCallback(() => {
+        if (!document.getElementById(mapElementId) || mapRef.current) {
+            // 이미 지도가 초기화되었거나, 지도를 그릴 DOM이 없으면 실행하지 않음
+            return;
         }
 
-        // Marker 생성
+        const mapOptions = {
+            center: new naver.maps.LatLng(mapData.latitude, mapData.longitude),
+            zoom: 18,
+            zoomControl: false,
+            mapTypeId: naver.maps.MapTypeId.NORMAL,
+        };
+
+        // mapRef에 생성된 지도 인스턴스를 할당
+        const map = new naver.maps.Map(mapElementId, mapOptions);
+        mapRef.current = map;
+
+        // --- 마커 생성 ---
         const marker = new naver.maps.Marker({
             position: new naver.maps.LatLng(mapData.latitude, mapData.longitude),
-            map: mapInstance || undefined,
+            map: map,
             title: "더워드교회",
-                icon: {
-                url: '/icons/church-marker.png', // 1. public 폴더의 이미지 경로
-                size: new naver.maps.Size(32, 32), // 2. 이미지의 원본 크기
+            icon: {
+                url: '/twc_location_mark.png',
                 origin: new naver.maps.Point(0, 0), // 3. 이미지의 시작점
-                anchor: new naver.maps.Point(16, 32) // 4. 아이콘의 좌표 정렬 지점
-            }
+                anchor: new naver.maps.Point(16, 32), // 4. 아이콘의 좌표 정렬 지점
+                scaledSize: new naver.maps.Size(DISPLAY_IMAGE_WIDTH, DISPLAY_IMAGE_HEIGHT),
+            },
         });
 
-        // 정보 창(InfoWindow) 생성 및 내용 정의
         const infoWindow = new naver.maps.InfoWindow({
             content: `
                 <div class="info-window-simple">
                     <p class="title">더워드교회</p>
-                    <a href="https://map.naver.com/p/search/%EB%8D%94%EC%9B%8C%EB%93%9C%EA%B5%90%ED%9A%8C?c=15.00,0,0,0,dh" class="address">서울특별시 노원구 섬밭로 30</a>
+                    <a href="https://map.naver.com/p/search/%EB%8D%94%EC%9B%8C%EB%93%9C%EA%B5%90%ED%9A%8C?c=15.00,0,0,0,dh" target="_blank" class="address">서울특별시 노원구 섬밭로 30</a>
                 </div>
             `,
-            // infoWindow 기본 스타일 제거
             borderWidth: 0,
             backgroundColor: "transparent",
             disableAnchor: true,
-            pixelOffset: new naver.maps.Point(0, -20)
         });
 
-        // 마커 클릭 시 정보 창 열기
+        // --- 마커 클릭 이벤트: HTML 박스 열기/닫기 ---
         naver.maps.Event.addListener(marker, 'click', () => {
-            if (mapInstance) {
-                if (infoWindow.getMap()) {
-                    infoWindow.close();
-                } else {
-                    infoWindow.open(mapInstance, marker);
-                }
+            if (infoWindow.getMap()) {
+                infoWindow.close();
+            } else {
+                infoWindow.open(map, marker);
             }
         });
 
-        if (mapInstance) {
-            infoWindow.open(mapInstance, marker);
-        }
+        // 처음 로드 시 정보창 바로 열기
+        infoWindow.open(map, marker);
 
-        // 지도 로드 완료
         setMapLoaded(true);
-    };
+    }, [mapElementId, setMapLoaded]);
 
-    const setActiveMaps = (index: number | null) => setActive(index);
 
     useEffect(() => {
-        // 스크립트 로딩 확인
-        const setTime = active === null ? 0 : 200;
-
-        setTimeout(() => {
-            if (typeof naver === "undefined") {
-                loadScript(
-                  "https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=7o1ui3zo6f",
-                  initMap
-                );
-            } else {
+        const timeoutId = setTimeout(() => {
+            if (window.naver && window.naver.maps) {
                 initMap();
+            } else {
+                loadScript(
+                    `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID}`,
+                    initMap
+                );
             }
-        }, setTime);
+        }, active === null ? 0 : 200);
+
+        // 4. Cleanup 함수: 컴포넌트가 사라질 때 실행됨
+        return () => {
+            clearTimeout(timeoutId);
+            // 지도 인스턴스가 있다면 메모리에서 제거
+            if (mapRef.current) {
+                mapRef.current.destroy();
+                mapRef.current = null;
+            }
+        };
     }, [active, initMap]);
     
     return { 
-        initMap,
-        loadScript,
         isMapLoaded,
         setIsMapOpen,
         isMapOpen,
-        setMapLoaded,
-        setActiveMaps
+        setActiveMaps: (index: number | null) => setActive(index),
     };
 }
 
