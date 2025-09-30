@@ -71,6 +71,11 @@ export const languagePacks = [
                     p4: "수요일 오후 10시 - 온라인 성경공부",
                     p5: "금요일 오후 8시 - 금요통독기도회"
                 },
+                parking: {
+                    title: "주차 안내",
+                    p1: "주일에는 주변 도로 주차 가능",
+                    p2: "주중에는 상가 주차장 이용 가능",
+                },
             },
             blog: "교회 블로그",
             counsel: { 
@@ -163,6 +168,11 @@ export const languagePacks = [
                     p3: "3:00 PM – Doctrine Lecture",
                     p4: "Wednesday, 10:00 PM – Online Bible Study",
                     p5: "Friday, 8:00 PM – Friday Scripture Reading & Prayer Meeting"
+                },
+                parking: {
+                    title: "Parking Information",
+                    p1: "Parking available with friends on Sundays",
+                    p2: "Commercial facilities are available for use during the week",
                 },
             },
             blog: "Church Blog",

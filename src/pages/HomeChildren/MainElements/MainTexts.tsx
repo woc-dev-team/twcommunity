@@ -30,21 +30,21 @@ const MainTexts = ({ onLocationClick }: MainTextsProps) => {
                     <button 
                         className="hover:scale-125 transition-all duration-500 ease-in-out" 
                         onClick={() => openPopup("https://www.youtube.com/@더워드교회")}>
-                            <FaYoutube className="w-[20px] c_md:w-[30px] h-auto text-red-600 dark:text-white"/>
+                            <FaYoutube className="w-[20px] c_md:w-[30px] h-auto hover:text-red-600 dark:text-white transition-colors duration-500 ease-in-out"/>
                     </button>
                 </Tippy>
                 <Tippy content="더워드처치 인스타그램" key={"instagram"}>
                     <button 
                         className="hover:scale-125 transition-all duration-500 ease-in-out" 
                         onClick={() => openPopup("https://www.instagram.com/p/DBsdQS8SccW/?img_index=2")}>
-                            <FaInstagram className="w-[20px] c_md:w-[30px] h-auto text-black dark:text-white"/>
+                            <FaInstagram className="w-[20px] c_md:w-[30px] h-auto hover:text-[#8134af] dark:text-white transition-colors duration-500 ease-in-out"/>
                     </button>
                 </Tippy>
                 <Tippy content="더워드처치 블로그" key={"blog"}>
                     <button
                         className="hover:scale-125 transition-all duration-500 ease-in-out" 
                         onClick={() => openPopup("https://blog.naver.com/thewordchurch__")}>
-                            <FaRegNewspaper className="w-[20px] c_md:w-[30px] h-auto text-black dark:text-white"/>
+                            <FaRegNewspaper className="w-[20px] c_md:w-[30px] h-auto hover:text-[#2db400] transition-colors duration-500 ease-in-out dark:text-white"/>
                     </button>
                 </Tippy>
             </div>
