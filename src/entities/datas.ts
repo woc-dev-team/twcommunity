@@ -79,9 +79,9 @@ export const languagePacks = [
             },
             blog: "교회 블로그",
             counsel: { 
-                title: "양육 및 신앙상담 신청",
+                title: "제자훈련 및 신앙상담 신청",
                 nurture: {
-                    title: "양육 신청",
+                    title: "제자훈련 신청",
                     desciption: "신앙 생활에 꼭 필요한 기본 개념부터 배움을 통해 그리스도의 장성한 분량까지 자라가는 목적을 가지고 있습니다. 바른 신앙과 바른 교리 위에 여러분의 신앙을 세워갑시다."
                 },
                 counseling: {
