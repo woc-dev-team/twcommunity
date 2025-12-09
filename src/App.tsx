@@ -4,6 +4,7 @@ import Navbar from "./features/Navbar/Navbar";
 import Sidebar from "./features/Sidebar/Sidebar";
 import { Route, Routes } from "react-router-dom";
 import Disciple from "./pages/Disciple";
+import BlogIFrame from "./pages/BlogIFrame";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/disciple" element={<Disciple />} />
+        <Route path="/blog" element={<BlogIFrame />} />
       </Routes>
       <Sidebar />
     </div>

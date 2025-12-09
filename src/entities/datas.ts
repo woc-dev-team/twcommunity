@@ -22,6 +22,10 @@ export const languagePacks = [
             text: "제자 훈련",
             link: "/disciple"
         },
+        menuBlog: {
+            text: "교회 사진",
+            link: "/blog"
+        },
         language: {
             title: "한국어 (KR)", 
             sub: "KR",
@@ -119,6 +123,10 @@ export const languagePacks = [
         disciple: {
             text: "discipleship",
             link: "/disciple"
+        },
+        menuBlog: {
+            text: "blog",
+            link: "/blog"
         },
         language: {
             title: "English (US)", 
