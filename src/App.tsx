@@ -4,7 +4,7 @@ import Navbar from "./features/Navbar/Navbar";
 import Sidebar from "./features/Sidebar/Sidebar";
 import { Route, Routes } from "react-router-dom";
 import Disciple from "./pages/Disciple";
-import BlogIFrame from "./pages/BlogIFrame";
+import IFrame from "./pages/CommonIFrame";
 
 const App = () => {
   return (
@@ -14,8 +14,20 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/disciple" element={<Disciple />} />
-        <Route path="/blog" element={<BlogIFrame />} />
-        {/* <Route path="/work" element={<WorkIFrame />} /> */}
+        <Route path="/blog" 
+          element={
+            <IFrame 
+              blogUrl="https://blog.naver.com/thewordchurch__"
+              blogUrlM="https://m.blog.naver.com/thewordchurch__?tab=1"
+            />}
+        />
+        {/* <Route path="/work" 
+          element={
+            <IFrame 
+              blogUrl="목사님 사역 블로그 URL"
+              blogUrlM="목사님 사역 블로그 모바일 URL"
+            />}
+        /> */}
       </Routes>
       <Sidebar />
     </div>
