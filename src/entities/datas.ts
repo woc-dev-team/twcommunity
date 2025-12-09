@@ -26,6 +26,10 @@ export const languagePacks = [
             text: "교회 사진",
             link: "/blog"
         },
+        menuPastorWork: {
+            text: "목사 사역",
+            link: "/work"
+        },
         language: {
             title: "한국어 (KR)", 
             sub: "KR",
@@ -116,17 +120,21 @@ export const languagePacks = [
                 link: "pastor"
             },
             {
-                text: "information", 
+                text: "Information", 
                 link: "info"
             }
         ],
         disciple: {
-            text: "discipleship",
+            text: "Discipleship",
             link: "/disciple"
         },
         menuBlog: {
-            text: "blog",
+            text: "Blog",
             link: "/blog"
+        },
+        menuPastorWork: {
+            text: "Work",
+            link: "/work"
         },
         language: {
             title: "English (US)", 

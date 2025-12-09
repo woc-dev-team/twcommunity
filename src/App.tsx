@@ -15,6 +15,7 @@ const App = () => {
         <Route path="/" element={<HomeScreen />} />
         <Route path="/disciple" element={<Disciple />} />
         <Route path="/blog" element={<BlogIFrame />} />
+        {/* <Route path="/work" element={<WorkIFrame />} /> */}
       </Routes>
       <Sidebar />
     </div>

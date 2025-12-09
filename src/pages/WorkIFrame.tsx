@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-const BlogIFrame: React.FC = () => { 
-    const naverBlogUrl = 'https://blog.naver.com/thewordchurch__';
-    const naverBlogMobileUrl = 'https://m.blog.naver.com/thewordchurch__?tab=1';
+const WorkIFrame: React.FC = () => { 
+    const naverBlogUrl = '목사님 사역 페이지 블로그 URL';
+    const naverBlogMobileUrl = '목사님 사역 페이지 블로그 모바일 URL';
     
     const [isMobile, setIsMobile] = useState(false);
     
@@ -52,4 +52,4 @@ const BlogIFrame: React.FC = () => {
     )
 }
 
-export default BlogIFrame;
+export default WorkIFrame;
