@@ -17,6 +17,14 @@ export const languagePacks = [
                 text: "교회 안내", 
                 link: "info"
             },
+            {
+                text: "교회 소개", 
+                link: "intro"
+            },
+            {
+                text: "새신자 안내", 
+                link: "newer"
+            },
         ],
         disciple: {
             text: "제자 훈련",
@@ -122,7 +130,15 @@ export const languagePacks = [
             {
                 text: "Information", 
                 link: "info"
-            }
+            },
+        {
+                text: "Introduction", 
+                link: "intro"
+            },
+            {
+                text: "New Believer", 
+                link: "newer"
+            },
         ],
         disciple: {
             text: "Discipleship",

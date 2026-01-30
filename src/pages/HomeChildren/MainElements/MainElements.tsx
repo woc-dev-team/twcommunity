@@ -35,7 +35,7 @@ const MainElements = () => {
                     />
                     
                     {/* 이미지 위에 겹칠 텍스트 레이어 */}
-                    <div className="absolute inset-0 flex flex-col justify-center items-end -translate-x-10 -translate-y-10 text-red-50 text-4xl xl:text-5xl font-bold text-right z-20 animate-pulse duration-700">
+                    <div className="absolute inset-0 flex flex-col justify-start items-end -translate-x-10 translate-y-20 text-gray-900 text-4xl xl:text-5xl font-bold text-right z-20">
                         <span className="whitespace-pre-line">{"열심히 못 믿어도\n말씀 앞에서는 다시 시작할 수 있습니다"}</span>
                     </div>
                 </div>

@@ -74,7 +74,7 @@ const LanguagePack = () => {
             <button
                 type="button"
                 onClick={() => setIsMenuOn(!isMenuOn)}
-                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg c_md:hidden hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                 aria-controls="navbar-language"
                 aria-expanded={isMenuOn}
             >

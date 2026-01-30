@@ -9,7 +9,7 @@ const AboutChurch = () => {
 
     return (
         <>
-            <div id="info" className="pt-16 w-full h-full p-5 text-6xl text-center transition-all duration-500 ease-in-out">
+            <div id="info" className="pt-16 w-full h-full p-5 text-6xl text-center transition-all duration-500 ease-in-out bg-zinc-50 dark:bg-[#0a0a0a]">
                 <p className="text-4xl c_md:text-6xl dark:text-white font-bold mb-16">{languagePacks[languageIndex].aboutChurch.title}</p>
 
                 {/* 여기서 세 파트 */}
@@ -18,7 +18,6 @@ const AboutChurch = () => {
                     <ChurchNews title={languagePacks[languageIndex].aboutChurch.news.title} />
                     <Counsel title={languagePacks[languageIndex].aboutChurch.counsel.title} />
                 </div>
-                {/* <p className="fixed bottom-0 text-xs text-center text-gray-200 hover:text-gray-700 dark:text-gray-700 dark:hover:text-gray-200 transition-all duration-500 ease-in-out">Developed by CreatyJohnKwon & Designed by TheWordChurch</p> */}
             </div>
         </>
     )

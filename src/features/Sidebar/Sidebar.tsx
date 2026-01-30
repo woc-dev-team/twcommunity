@@ -11,7 +11,7 @@ const Sidebar = () => {
     return (
         <>
             {/* 사이드바 (모바일 메뉴) */}
-            <div className={`block c_md:hidden fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-900 shadow-lg transform transition-transform duration-500 ease-in-out z-50
+            <div className={`block fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-900 shadow-lg transform transition-transform duration-500 ease-in-out z-50
                 ${isMenuOn ? "translate-x-0" : "translate-x-full"}`}
             >
                 <button 
@@ -22,13 +22,15 @@ const Sidebar = () => {
                 </button>
 
                 <ul className="mt-10 space-y-4 p-5">
-                    {menus.map((menuList, index) => (
+                    {menus.map((menuList: { text: string; link: string; }, index: number) => (
                         <NavList
                             key={index}
                             menuText={menuList.text}
                             menuLink={menuList.link}
                         />
                     ))}
+
+                    <li className="border-b border-gray-600"/>
 
                     {/* 브라우스 라우터 */}
                     <Link to={languagePacks[languageIndex].disciple.link} onClick={() => setIsMenuOn(!isMenuOn)} className="block py-2 px-3 c_md:text-lg p-0 c_md:p-4 text-gray-900 rounded-sm dark:text-white dark:hover:text-white md:dark:hover:bg-transparent">
