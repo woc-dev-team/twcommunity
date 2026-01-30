@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 
 interface IFrameProps {
     blogUrl: string;
     blogUrlM: string;
 }
 
-const IFrame: React.FC<IFrameProps> = ({ blogUrl, blogUrlM }) => { 
+const IFrame: FC<IFrameProps> = ({ blogUrl, blogUrlM }) => { 
     
     // 로딩 상태 관리
     const [isLoading, setIsLoading] = useState(true);
@@ -42,7 +42,7 @@ const IFrame: React.FC<IFrameProps> = ({ blogUrl, blogUrlM }) => {
 
     const zoomScaleClass = 'scale-150'; 
     const originClass = 'origin-center';
-    const translateYClass = 'translate-y-[-20%]';
+    const translateYClass = blogUrl === "https://blog.naver.com/thewordchurch__" ? "translate-y-[-20%]" : "translate-y-[0%]";
 
     return (
         <div className="fixed top-0 left-0 w-screen max-h-full h-screen overflow-hidden bg-white dark:bg-gray-900">

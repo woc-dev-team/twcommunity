@@ -27,7 +27,7 @@ export const languagePacks = [
             link: "/blog"
         },
         menuPastorWork: {
-            text: "목사 사역",
+            text: "목회 활동",
             link: "/work"
         },
         language: {
@@ -133,7 +133,7 @@ export const languagePacks = [
             link: "/blog"
         },
         menuPastorWork: {
-            text: "Work",
+            text: "Ministry",
             link: "/work"
         },
         language: {

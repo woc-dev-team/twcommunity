@@ -27,7 +27,17 @@ const MainElements = () => {
                 </div>
                 {/* 콤푸타 버전 */}
                 <div className="relative row-span-4 h-screen c_image:col-span-6 c_image:block hidden">
-                    <CustomImage className="w-full h-full object-cover transition-all duration-500 ease-in-out" src={ChurchImage} alt={"교회 메인 이미지"} gradation="tbl"/>
+                    <CustomImage 
+                        className="w-full h-full object-cover transition-all duration-500 ease-in-out" 
+                        src={ChurchImage} 
+                        alt={"교회 메인 이미지"} 
+                        gradation="tbl"
+                    />
+                    
+                    {/* 이미지 위에 겹칠 텍스트 레이어 */}
+                    <div className="absolute inset-0 flex flex-col justify-center items-end -translate-x-10 -translate-y-10 text-red-50 text-4xl xl:text-5xl font-bold text-right z-20 animate-pulse duration-700">
+                        <span className="whitespace-pre-line">{"열심히 못 믿어도\n말씀 앞에서는 다시 시작할 수 있습니다"}</span>
+                    </div>
                 </div>
                 {/* 모바일 버전 */}
                 <div className="relative row-span-4 h-full c_image:col-span-6 c_image:hidden block">

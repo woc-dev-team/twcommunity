@@ -39,9 +39,9 @@ const Sidebar = () => {
                         {languagePacks[languageIndex].menuBlog.text}
                     </Link>
 
-                    {/* <Link to={languagePacks[languageIndex].menuPastorWork.link} onClick={() => setIsMenuOn(!isMenuOn)} className="block py-2 px-3 c_md:text-lg p-0 c_md:p-4 text-gray-900 rounded-sm dark:text-white dark:hover:text-white md:dark:hover:bg-transparent">
+                    <Link to={languagePacks[languageIndex].menuPastorWork.link} onClick={() => setIsMenuOn(!isMenuOn)} className="block py-2 px-3 c_md:text-lg p-0 c_md:p-4 text-gray-900 rounded-sm dark:text-white dark:hover:text-white md:dark:hover:bg-transparent">
                         {languagePacks[languageIndex].menuPastorWork.text}
-                    </Link> */}
+                    </Link>
                 </ul>
             </div>
 

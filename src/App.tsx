@@ -21,13 +21,13 @@ const App = () => {
               blogUrlM="https://m.blog.naver.com/thewordchurch__?tab=1"
             />}
         />
-        {/* <Route path="/work" 
+        <Route path="/work" 
           element={
             <IFrame 
-              blogUrl="목사님 사역 블로그 URL"
-              blogUrlM="목사님 사역 블로그 모바일 URL"
+              blogUrl="https://blog.naver.com/thewordchurch_"
+              blogUrlM="https://m.blog.naver.com/thewordchurch_?tab=1"
             />}
-        /> */}
+        />
       </Routes>
       <Sidebar />
     </div>
