@@ -6,6 +6,14 @@ export const languagePacks = [
                 link: "home"
             },
             {
+                text: "교회 소개", 
+                link: "intro"
+            },
+            {
+                text: "새신자 안내", 
+                link: "newer"
+            },
+            {
                 text: "교회 비전",
                 link: "vision"
             },
@@ -16,14 +24,6 @@ export const languagePacks = [
             {
                 text: "교회 안내", 
                 link: "info"
-            },
-            {
-                text: "교회 소개", 
-                link: "intro"
-            },
-            {
-                text: "새신자 안내", 
-                link: "newer"
             },
         ],
         disciple: {
@@ -120,6 +120,14 @@ export const languagePacks = [
                 link: "home"
             },
             {
+                text: "Introduction", 
+                link: "intro"
+            },
+            {
+                text: "New Believer", 
+                link: "newer"
+            },
+            {
                 text: "Vision",
                 link: "vision"
             },
@@ -130,14 +138,6 @@ export const languagePacks = [
             {
                 text: "Information", 
                 link: "info"
-            },
-        {
-                text: "Introduction", 
-                link: "intro"
-            },
-            {
-                text: "New Believer", 
-                link: "newer"
             },
         ],
         disciple: {

@@ -9,11 +9,11 @@ const HomeScreen = () => {
   return (
     <div id="home">
       <MainElements />
+      <ChurchIntro />
+      <NewBeliever />
       <ChurchVision />
       <AboutPaster />
       <AboutChurch /> 
-      <ChurchIntro />
-      <NewBeliever />
     </div>
   )
 }
