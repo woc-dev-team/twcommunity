@@ -5,10 +5,20 @@ import Sidebar from "./features/Sidebar/Sidebar";
 import { Route, Routes } from "react-router-dom";
 import Disciple from "./pages/Disciple";
 import IFrame from "./pages/CommonIFrame";
+import { useEffect } from "react";
 
-const App = () => {
+const App: React.FC = () => {
+  useEffect(() => {
+    const nav = window.navigator as any;
+    const platform = (nav?.userAgentData?.platform || nav?.platform || "").toLowerCase();
+    const isWindows = platform.includes("win");
+    if (isWindows) {
+      document.documentElement.style.fontSize = "75%";
+    }
+  }, []);
+
   return (
-    <div className="bg-white dark:bg-black p-0 m-0 transition-all duration-500 ease-in-out">
+    <div className="bg-white dark:bg-black p-0 m-0 transition-all duration-500 ease-in-out overflow-x-clip">
       <DarkMode />
       <Navbar />
       <Routes>
